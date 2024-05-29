@@ -46,7 +46,7 @@ const LeftContent = () => {
         {CAPTURE_TOOLS_OPTION.map((el) => {
           return (
             <a href={el.url} className="text-sm px-4 py-2 rounded-lg hover:bg-[#d7dce1] duration-200 ease-in-out transition-all">
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 capture-tools">
                 {el.svg}
                 <span className="text-[#0e1a44]">&nbsp;{el.label}</span>
               </div>

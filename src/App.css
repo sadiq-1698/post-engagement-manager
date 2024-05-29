@@ -1,5 +1,7 @@
 .App {}
 
-/* .having-child svg {
-    color: red;
-} */
+.sidebar-icon-parent svg,
+.header-action-btn svg,
+.capture-tools svg {
+    color: #0e1a44;
+}
