@@ -5,7 +5,7 @@ const Header = () => {
         <div className="w-10 rounded-full overflow-hidden lg:mx-2 cursor-pointer">
           <img src="https://graph.facebook.com/237352949662793/picture?type=normal" alt="Page Name" />
         </div>
-        <div className="group p-1.5 border border-solid border-gray-300 rounded-md ml-3 cursor-pointer">
+        <div className="group px-2 py-[5px] border border-solid border-[#e3e9f4] rounded-md ml-3 cursor-pointer">
           <span className="group-hover:underline">@hitunezofficial</span>
         </div>
       </div>
