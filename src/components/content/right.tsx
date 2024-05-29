@@ -1,3 +1,5 @@
+import PaginationButton from "../pagination-btn";
+
 const RightContent = () => {
   return (
     <div className="lg:col-span-7">
@@ -21,18 +23,18 @@ const RightContent = () => {
       </div>
 
       <div className="flex justify-center items-center py-3.5 gap-4">
-        <button className="rounded-full w-8 h-8 flex items-center justify-center bg-[#0069ff]">
+        <PaginationButton>
           &lt;&lt;
-        </button>
-        <button className="rounded-full w-8 h-8 flex items-center justify-center bg-[#0069ff]">
+        </PaginationButton>
+        <PaginationButton>
           &lt;
-        </button>
-        <button className="rounded-full w-8 h-8 flex items-center justify-center bg-[#0069ff]">
-          &gt;
-        </button>
-        <button className="rounded-full w-8 h-8 flex items-center justify-center bg-[#0069ff]">
+        </PaginationButton>
+        <PaginationButton>
           &gt;&gt;
-        </button>
+        </PaginationButton>
+        <PaginationButton>
+          &gt;
+        </PaginationButton>
         <span>Page 1 of 2</span>
         <span>
           . Go to page:&nbsp;
