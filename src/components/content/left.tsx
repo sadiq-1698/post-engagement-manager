@@ -40,7 +40,7 @@ const CAPTURE_TOOLS_OPTION = [
 
 const LeftContent = () => {
   return (
-    <div className="p-2 bg-white rounded-2xl col-span-2 px-6 max-h-min">
+    <div className="p-2 bg-white rounded-2xl col-span-2 px-6 h-min">
       <h4 className="px-4 py-2 text-[#b0b8c3] text-sm font-bold">Capture Tools</h4>
       <div className="flex flex-col">
         {CAPTURE_TOOLS_OPTION.map((el) => {

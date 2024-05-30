@@ -13,10 +13,12 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div className='flex'>
+      <div className='min-h-screen bg-base-200'>
+        <Header />
+        {/* <div className='flex'> */}
         <Sidebar />
-        <Content />
+        {/* <Content /> */}
+        {/* </div> */}
       </div>
     </>
   );
