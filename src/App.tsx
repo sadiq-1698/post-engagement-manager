@@ -1,26 +1,14 @@
 import './App.css';
+import React from 'react';
 import Header from './components/header';
-import Sidebar from './components/sidebar';
-import Content from './components/content';
-import React, { useEffect, useState } from 'react';
+import Drawer from './components/drawer';
 
 function App() {
-  const [theme] = useState('light');
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
   return (
-    <>
-      <div className='min-h-screen bg-base-200'>
-        <Header />
-        {/* <div className='flex'> */}
-        <Sidebar />
-        {/* <Content /> */}
-        {/* </div> */}
-      </div>
-    </>
+    <div className='min-h-screen bg-base-200'>
+      <Header />
+      <Drawer />
+    </div>
   );
 }
 
