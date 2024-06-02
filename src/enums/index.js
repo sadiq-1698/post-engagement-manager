@@ -26,48 +26,48 @@ import { ReactComponent as KnowledgeBaseIcon } from "../assets/svgs/knowledge-ba
 
 export const SIDEBAR_MENU = [
   {
-    label: "Automation",
-    url: "/automation",
+    label: "Dashboard",
+    url: "dashboard",
     component: <DashboardIcon />,
   },
   {
     label: "Audience",
-    url: "/audience",
+    url: "audience",
     component: <AudienceIcon />,
   },
   {
     label: "Messager",
-    url: "/message",
+    url: "message",
     component: <MessageIcon />,
   },
   {
     label: "Capture Tools",
-    url: "/capture-tools",
+    url: "capture-tools",
     component: <MagnetIcon />,
   },
   {
     label: "Broadcasts",
-    url: "/broadcasts",
+    url: "broadcasts",
     component: <BroadcastIcon />,
   },
   {
     label: "Automation",
-    url: "/automation",
+    url: "automation",
     component: <AutomationIcon />,
   },
   {
     label: "Stack",
-    url: "/stack",
+    url: "stack",
     component: <StackIcon />,
   },
   {
     label: "Graph",
-    url: "/graph",
+    url: "graph",
     component: <GraphIcon />,
   },
   {
     label: "Settings",
-    url: "/settings",
+    url: "settings",
     component: <SettingsIcon />,
   },
 ];
@@ -75,7 +75,7 @@ export const SIDEBAR_MENU = [
 export const CAPTURE_TOOLS_OPTION = [
   {
     label: "Links Library",
-    url: "/links-library",
+    url: "links-library",
     svg: <LinksLibraryIcon />,
   },
   {

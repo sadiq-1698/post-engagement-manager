@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { PROFILE_DROPDOWN_OPTIONS } from "../../enums";
 
 const ProfileDropdown = () => {
@@ -21,12 +22,12 @@ const ProfileDropdown = () => {
         className="dropdown-content menu p-2 shadow bg-base-100 rounded-box mt-3 w-48"
       >
         {
-          PROFILE_DROPDOWN_OPTIONS.map(el => {
+          PROFILE_DROPDOWN_OPTIONS.map((el, idx) => {
             return (
-              <li role="menuitem">
-                <a href={el.url}>
+              <li role="menuitem" key={el.url + "|" + idx}>
+                <Link to={el.url}>
                   {el.svg}{" "}{el.label}
-                </a>
+                </Link>
               </li>
             );
           })

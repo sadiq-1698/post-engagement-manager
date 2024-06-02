@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MOCK_TABLE_DATA } from '../../enums';
 import InstagramIcon from "../../assets/svgs/instagram.svg";
 import MessengerBlurpleIcon from "../../assets/svgs/message-blurple.svg";
@@ -37,9 +38,9 @@ const PostEngagementsTable = () => {
 
         <tbody>
           {
-            MOCK_TABLE_DATA.map(el => {
+            MOCK_TABLE_DATA.map((el, idx) => {
               return (
-                <tr>
+                <tr key={el.name + "-" + idx}>
                   <td style={{ width: "20px" }}>
                     <div className="px-1">
                       <input type="checkbox" className="checkbox checkbox-sm" />
@@ -67,19 +68,19 @@ const PostEngagementsTable = () => {
                         role="menu"
                       >
                         <li role="menuitem">
-                          <a href="/">
+                          <Link to={el.name + "-" + idx + "/edit"}>
                             Edit
-                          </a>
+                          </Link>
                         </li>
                         <li role="menuitem">
-                          <a href="/">
+                          <Link to="/">
                             Rename
-                          </a>
+                          </Link>
                         </li>
                         <li role="menuitem">
-                          <a href="/">
+                          <Link to="/">
                             Delete
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
