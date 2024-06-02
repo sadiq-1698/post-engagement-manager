@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CAPTURE_TOOLS_OPTION } from "../../enums";
 
 const ToolsMenu = () => {
@@ -13,10 +14,10 @@ const ToolsMenu = () => {
             return (
               <li role="menuitem" className="">
                 {/* add class 'active' for selected styles */}
-                <a href="/929/capture-tools/links-library">
+                <Link to={el.url}>
                   {el.svg}{" "}
                   {el.label}
-                </a>
+                </Link>
               </li>
             );
           })

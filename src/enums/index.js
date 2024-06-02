@@ -26,8 +26,8 @@ import { ReactComponent as KnowledgeBaseIcon } from "../assets/svgs/knowledge-ba
 
 export const SIDEBAR_MENU = [
   {
-    label: "Automation",
-    url: "/automation",
+    label: "Dashboard",
+    url: "/dashboard",
     component: <DashboardIcon />,
   },
   {
@@ -75,7 +75,7 @@ export const SIDEBAR_MENU = [
 export const CAPTURE_TOOLS_OPTION = [
   {
     label: "Links Library",
-    url: "/links-library",
+    url: "links-library",
     svg: <LinksLibraryIcon />,
   },
   {

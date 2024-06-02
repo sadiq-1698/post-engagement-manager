@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SIDEBAR_MENU } from "../../enums";
 
 const Sidebar = () => {
@@ -11,9 +12,9 @@ const Sidebar = () => {
             return (
               <li>
                 {/* add class 'active' for selected styles */}
-                <a className="py-4" href={el.url}>
+                <Link className="py-4" to={el.url}>
                   {el.component}
-                </a>
+                </Link>
               </li>
             );
           })
