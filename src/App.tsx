@@ -1,11 +1,12 @@
 import './App.css';
 import React from 'react';
 import Header from './components/header';
+import CaptureToolsPage from './pages/capture-tools';
 import Sidebar from './components/drawer/sidebar';
+import PostEngagement from './components/post-engagement';
 import DrawerToggle from './components/drawer/drawer-toggle';
-import DrawerContent from './components/drawer/drawer-content';
+import PostEngagementEdit from './components/post-engagement/edit';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import CaptureTools from './pages/capture-tools';
 
 function App() {
   return (
@@ -18,9 +19,14 @@ function App() {
           <div className="drawer-content">
             <div className="pt-24">
               <Routes>
-                <Route path="/" element={<Navigate to="/capture-tools/links-library" />} />
-                <Route path="capture-tools/:option" element={<CaptureTools />} />
-                {/* <Route path=":sidebarOption/*" element={<CaptureTools />} /> */}
+                {/* CAPTURE TOOLS ROUTE DEFINITIONS */}
+                <Route path="/" element={<Navigate to="/capture-tools" />} />
+                <Route path="/capture-tools/" element={<Navigate to="/capture-tools/links-library" />} />
+
+                <Route path="capture-tools/*" Component={CaptureToolsPage}>
+                  <Route path="post-engagement" Component={PostEngagement} />
+                  <Route path="post-engagement/:postEngagementId/edit" Component={PostEngagementEdit} />
+                </Route>
               </Routes>
             </div>
           </div>

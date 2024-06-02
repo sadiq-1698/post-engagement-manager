@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
 import { SIDEBAR_MENU } from "../../enums";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const { pathname } = useLocation();
+
   return (
     <div className="drawer-side">
       <label className="drawer-overlay"></label>
@@ -9,10 +11,10 @@ const Sidebar = () => {
       <ul className="menu border-r border-r-base-300 min-h-full bg-base-100 pt-20">
         {
           SIDEBAR_MENU.map(el => {
+            const isActive = el.url === pathname.split("/")[1];
             return (
-              <li>
-                {/* add class 'active' for selected styles */}
-                <Link className="py-4" to={el.url}>
+              <li key={el.url}>
+                <Link className={`${isActive ? 'active ' : ''}py-4`} to={el.url}>
                   {el.component}
                 </Link>
               </li>
