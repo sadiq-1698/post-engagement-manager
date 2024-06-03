@@ -9,10 +9,20 @@ const SettingsAndResponse = () => {
     <div className="basis-2/5">
 
       <div role="tablist" className="tabs child:!border-b child:!text-sm tabs-bordered tabs-lg">
-        <button role="tab" className={`tab ${tabIndex === 0 ? 'tab-active' : ''}`} onClick={() => setTabIndex(0)}>
+        <button
+          role="tab"
+          onClick={() => setTabIndex(0)}
+          style={{ borderBottomWidth: '1px' }}
+          className={`tab ${tabIndex === 0 ? 'tab-active' : ''}`}
+        >
           Settings
         </button>
-        <button role="tab" className={`tab ${tabIndex === 1 ? 'tab-active' : ''}`} onClick={() => setTabIndex(1)}>
+        <button
+          role="tab"
+          onClick={() => setTabIndex(1)}
+          style={{ borderBottomWidth: '1px' }}
+          className={`tab ${tabIndex === 1 ? 'tab-active' : ''}`}
+        >
           Auto Response
         </button>
       </div>
