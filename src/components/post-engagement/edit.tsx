@@ -1,10 +1,10 @@
 import EditTools from "../../sections/edit-tools";
-import Breadcrumbs from "../../sections/breadcrumbs";
+import EditHeader from "../../sections/edit-header";
 
 const PostEngagementEdit = () => {
   return (
     <>
-      <Breadcrumbs />
+      <EditHeader />
       <EditTools />
     </>
   );

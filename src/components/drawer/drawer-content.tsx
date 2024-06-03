@@ -2,7 +2,7 @@ import ToolsMenu from "./tools-menu";
 import Pagination from "./pagination";
 import TableActions from "./table-actions";
 import PostEngagementsTable from "./post-engagement-table";
-import Breadcrumbs from "../../sections/breadcrumbs";
+import Breadcrumbs from "../post-engagement/breadcrumbs";
 import EditTools from "../../sections/edit-tools";
 import { Navigate, Route, Routes } from 'react-router-dom';
 import PostEngagement from "../post-engagement";

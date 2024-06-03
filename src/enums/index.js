@@ -218,3 +218,17 @@ export const STATUS_OPTIONS = [
     url: "https://clepher.com/support/",
   },
 ];
+
+export const POST_ENGAGEMENT_BREADCRUMBS = [
+  {
+    label: "Capture Tools",
+    url: "/capture-tools",
+  },
+  {
+    label: "Capture Tools",
+    url: "/capture-tools/post-engagement",
+  },
+  {
+    label: "Edit",
+  },
+];
