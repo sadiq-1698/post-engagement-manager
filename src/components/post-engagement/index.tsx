@@ -1,6 +1,6 @@
-import Pagination from "../drawer/pagination";
-import TableActions from "../drawer/table-actions";
-import PostEngagementsTable from "../drawer/post-engagement-table";
+import Pagination from "./pagination";
+import TableActions from "./table-actions";
+import PostEngagementsTable from "./post-engagement-table";
 
 const PostEngagement = () => {
   return (

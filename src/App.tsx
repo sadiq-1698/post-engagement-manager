@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 import Header from './components/header';
-import CaptureToolsPage from './pages/capture-tools';
 import Sidebar from './components/drawer/sidebar';
+import CaptureToolsPage from './pages/capture-tools';
 import PostEngagement from './components/post-engagement';
 import DrawerToggle from './components/drawer/drawer-toggle';
 import PostEngagementEdit from './components/post-engagement/edit';

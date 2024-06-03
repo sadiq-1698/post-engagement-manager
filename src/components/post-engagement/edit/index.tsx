@@ -1,5 +1,5 @@
-import EditTools from "../../sections/edit-tools";
-import EditHeader from "../../sections/edit-header";
+import EditHeader from "./edit-header";
+import EditTools from "./edit-tools";
 
 const PostEngagementEdit = () => {
   return (
