@@ -2,12 +2,49 @@ import React, { useState } from "react";
 import AddKeywords from "./add-keywords";
 import ClepherSelect from "./clepher-select";
 
+const MESSAGE_TYPES = [
+  {
+    value: 'flow',
+    label: 'Flow',
+  },
+  {
+    value: 'single-message',
+    label: 'Single Message',
+  }
+];
+
+const MESSAGE_FLOWS = [
+  {
+    value: 'welcome-message',
+    label: 'Welcome Message',
+  },
+  {
+    value: 'default-reply',
+    label: 'Default Reply',
+  }
+];
+
+const TEXT_CARDS = [
+  {
+    value: 'text-card-1',
+    label: 'Text Card #1',
+  },
+  {
+    value: 'text-card-2',
+    label: 'Text Card #2',
+  }
+];
+
 const PostSettings = () => {
   const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);
   const [triggerKeywords, setTriggerKeywords] = useState<Array<string>>([]);
 
   const [excludeKeywordVal, setExcludeKeywordVal] = useState("");
   const [triggerKeywordVal, setTriggerKeywordVal] = useState("");
+
+  const [messageType, setMessageType] = useState(MESSAGE_TYPES[0]);
+  const [messageFlow, setMessageFlow] = useState(MESSAGE_FLOWS[0]);
+  const [textCard, setTextCard] = useState(TEXT_CARDS[0]);
 
   return (
     <>
@@ -85,15 +122,28 @@ const PostSettings = () => {
       <h1 className="border-b border-b-base-300 mb-2.5 py-0.5 font-semibold">
         Private Reply After Post Engagement
       </h1>
+
       <ClepherSelect
         label="Select Message Type"
-        options={["Flow", "Single Message"]}
+        options={MESSAGE_TYPES}
+        onSelect={setMessageType}
       />
+
       <ClepherSelect
         includeSelect
         label="Select Flow"
-        options={["Welcome Message", "Default Reply"]}
+        options={MESSAGE_FLOWS}
+        onSelect={setMessageFlow}
       />
+
+      {
+        messageType.value === "single-message" &&
+        <ClepherSelect
+          label="Select Message"
+          options={TEXT_CARDS}
+          onSelect={setTextCard}
+        />
+      }
     </>
   );
 }
