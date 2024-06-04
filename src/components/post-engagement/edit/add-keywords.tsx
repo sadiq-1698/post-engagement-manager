@@ -33,6 +33,7 @@ const AddKeywords = ({
     clearField: React.Dispatch<string>
   ) => {
     if (e.key === 'Enter') {
+      if (keyword.trim().length < 1) return;
       const res = [...array, keyword];
       arraySetterFunc([...res]);
       clearField("");
@@ -45,6 +46,7 @@ const AddKeywords = ({
     arraySetterFunc: React.Dispatch<Array<string>>,
     clearField: React.Dispatch<string>
   ) => {
+    if (keyword.trim().length < 1) return;
     const res = [...array, keyword];
     arraySetterFunc([...res]);
     clearField("");

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AddKeywords from "./add-keywords";
+import ClepherSelect from "./clepher-select";
 
 const PostSettings = () => {
   const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);
@@ -84,43 +85,15 @@ const PostSettings = () => {
       <h1 className="border-b border-b-base-300 mb-2.5 py-0.5 font-semibold">
         Private Reply After Post Engagement
       </h1>
-      <div className="form-control">
-        <div className="label">
-          <span className="label-text">
-            Select Message Type
-          </span>
-        </div>
-        <div className="form-control">
-          <select spellCheck={true} autoComplete="on" className="select select-bordered w-full">
-            <option value="flow" selected={true}>
-              Flow
-            </option>
-            <option value="single-message">
-              Single Message
-            </option>
-          </select>
-        </div>
-      </div>
-      <div className="form-control">
-        <div className="label">
-          <span className="label-text">
-            Select Flow
-          </span>
-        </div>
-        <div className="form-control">
-          <select spellCheck={true} autoComplete="on" className="select select-bordered w-full">
-            <option value="" disabled={true} selected={true}>
-              Select
-            </option>
-            <option value="welcome">
-              Welcome Message
-            </option>
-            <option value="default">
-              Default Reply
-            </option>
-          </select>
-        </div>
-      </div>
+      <ClepherSelect
+        label="Select Message Type"
+        options={["Flow", "Single Message"]}
+      />
+      <ClepherSelect
+        includeSelect
+        label="Select Flow"
+        options={["Welcome Message", "Default Reply"]}
+      />
     </>
   );
 }
