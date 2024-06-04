@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import ClepherBadge from "./clepher-badge";
+import AddKeywords from "./add-keywords";
 
 const PostSettings = () => {
   const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);
   const [triggerKeywords, setTriggerKeywords] = useState<Array<string>>([]);
 
-  const handleCloseBadge = (array: Array<string>, idx: number, setterFunction: React.Dispatch<Array<string>>) => {
-    const res = array.filter((label: string, i: number) => i !== idx);
-    setterFunction([...res]);
-  }
+  const [excludeKeywordVal, setExcludeKeywordVal] = useState("");
+  const [triggerKeywordVal, setTriggerKeywordVal] = useState("");
 
   return (
     <>
@@ -63,61 +61,23 @@ const PostSettings = () => {
 
       <br />
 
-      <div className="form-control">
-        <div className="label">
-          <span className="label-text">
-            Exclude Comments With These Keywords
-          </span>
-        </div>
-        <div className="mb-2.5">
-          {
-            excludeKeywords.map((keyword, idx) => {
-              return (
-                <ClepherBadge
-                  label={keyword}
-                  key={keyword + "|" + idx}
-                  onClose={() => handleCloseBadge(excludeKeywords, idx, setExcludeKeywords)}
-                />
-              );
-            })
-          }
-        </div>
-        <div className="join">
-          <input placeholder="Specify Keywords" className="input join-item w-full input-bordered focus:outline-offset-0" value="" />
-          <button className="btn join-item btn-primary">
-            Add Keyword
-          </button>
-        </div>
-      </div>
+      <AddKeywords
+        value={excludeKeywordVal}
+        keywords={excludeKeywords}
+        setValue={setExcludeKeywordVal}
+        setKeywords={setExcludeKeywords}
+        header="Exclude Comments With These Keywords"
+      />
 
       <br />
 
-      <div className="form-control">
-        <div className="label">
-          <span className="label-text">
-            Only Trigger For Comments With These Keywords
-          </span>
-        </div>
-        <div className="mb-2.5">
-          {
-            triggerKeywords.map((keyword, idx) => {
-              return (
-                <ClepherBadge
-                  label={keyword}
-                  key={keyword + "|" + idx}
-                  onClose={() => handleCloseBadge(triggerKeywords, idx, setTriggerKeywords)}
-                />
-              );
-            })
-          }
-        </div>
-        <div className="join">
-          <input placeholder="Specify Keywords" className="input join-item w-full input-bordered focus:outline-offset-0" value="" />
-          <button className="btn join-item btn-primary">
-            Add Keyword
-          </button>
-        </div>
-      </div>
+      <AddKeywords
+        value={triggerKeywordVal}
+        keywords={triggerKeywords}
+        setValue={setTriggerKeywordVal}
+        setKeywords={setTriggerKeywords}
+        header="Only Trigger For Comments With These Keywords"
+      />
 
       <br />
 
