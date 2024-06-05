@@ -1,8 +1,18 @@
 import React from "react";
 
-const PaginationButton = ({ children, disabled = false }: { children: React.ReactNode, disabled?: boolean }) => {
+type PaginationButtonProps = {
+  children: React.ReactNode,
+  disabled?: boolean,
+  onClick: () => void
+}
+
+const PaginationButton = ({ children, disabled = false, onClick }: PaginationButtonProps) => {
   return (
-    <button className="btn btn-circle btn-primary btn-sm" disabled={disabled}>
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className="btn btn-circle btn-primary btn-sm"
+    >
       {children}
     </button>
   );

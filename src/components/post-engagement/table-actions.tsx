@@ -1,7 +1,13 @@
 import { ReactComponent as SearchIcon } from "../../assets/svgs/search.svg";
 import { ReactComponent as CaretDownIcon } from "../../assets/svgs/caret-down.svg";
 
-const TableActions = () => {
+type TableActionsProps = {
+  searchQuery: string,
+  onSearchChange: (query: string) => void,
+  onBulkDelete: () => void
+}
+
+const TableActions = ({ searchQuery, onSearchChange, onBulkDelete }: TableActionsProps) => {
   return (
     <div className="mb-2 flex flex-row items-end gap-2">
       <div className="grow truncate">
@@ -11,7 +17,9 @@ const TableActions = () => {
         <div className="join items-center border border-neutral bg-base-100">
           <input
             type="text"
+            value={searchQuery}
             placeholder="Search…"
+            onChange={(e) => onSearchChange(e.target.value)}
             className="input input-sm h-[30px] focus:outline-none join-item border-0"
           />
           <span className="join-item px-1">
@@ -33,7 +41,13 @@ const TableActions = () => {
           role="menu"
         >
           <li role="menuitem">
-            <a href="/">
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onBulkDelete();
+              }}
+            >
               Delete
             </a>
           </li>
