@@ -18,7 +18,7 @@ const PostEngagementsTable = ({
 }) => {
   return (
     <div className="overflow-y-hidden overflow-x-scroll">
-      <table className="table table-sm bg-base-100 px-6">
+      <table className="table table-sm bg-base-100 px-6" style={{ position: 'initial' }}>
         <thead>
           <tr>
             <th colSpan={1} className='w-5'>
@@ -55,6 +55,9 @@ const PostEngagementsTable = ({
         <tbody>
           {
             currentData.map((el, idx: number) => {
+              const isFromLastRows = idx === currentData.length - 1 || idx === currentData.length - 2;
+              const dropDownOverflowClass = isFromLastRows ? 'dropdown-top' : 'dropdown-bottom';
+
               return (
                 <tr key={el.name + "-" + idx}>
                   <td className='w-5'>
@@ -79,7 +82,7 @@ const PostEngagementsTable = ({
                   <td className='w-[150px]'>{el.acquired}</td>
                   <td className='w-[150px]'>{el.conversion}</td>
                   <td className='w-[150px]'>
-                    <div role="listbox" className="dropdown dropdown-bottom dropdown-end">
+                    <div role="listbox" className={`dropdown ${dropDownOverflowClass} dropdown-end`}>
                       <label tabIndex={1}>
                         <button className="btn btn-xs btn-outline">Actions</button>
                       </label>

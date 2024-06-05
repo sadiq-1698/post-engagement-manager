@@ -1,6 +1,6 @@
 const DrawerToggle = () => {
   return (
-    <input type="checkbox" className="drawer-toggle" readOnly={true} />
+    <input id="my-drawer" type="checkbox" className="drawer-toggle" />
   );
 }
 

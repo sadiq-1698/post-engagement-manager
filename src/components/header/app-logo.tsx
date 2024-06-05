@@ -14,7 +14,7 @@ const AppLogo = () => {
           </div>
         </div>
       </Link>
-      <label className="btn btn-circle btn-ghost lg:hidden">
+      <label className="btn btn-circle btn-ghost lg:hidden" htmlFor="my-drawer">
         <HamburgerIcon />
       </label>
     </div>

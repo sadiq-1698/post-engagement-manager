@@ -6,7 +6,7 @@ const Sidebar = () => {
 
   return (
     <div className="drawer-side">
-      <label className="drawer-overlay"></label>
+      <label className="drawer-overlay" htmlFor="my-drawer"></label>
 
       <ul className="menu border-r border-r-base-300 min-h-full bg-base-100 pt-20">
         {
