@@ -24,29 +24,33 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
     }
   };
 
-  // const handleInputBlur = () => {
-  //   if (inputValue > 0 && inputValue <= totalPages) {
-  //     onPageChange(inputValue);
-  //   } else {
-  //     setInputValue(currentPage);
-  //   }
-  // };
-
   return (
     <div className="flex items-center justify-center gap-4 py-3.5">
-      <PaginationButton onClick={() => onPageChange(1)}>
+      <PaginationButton
+        disabled={currentPage === 1}
+        onClick={() => onPageChange(1)}
+      >
         <PaginationInitialIcon />
       </PaginationButton>
 
-      <PaginationButton onClick={() => onPageChange(Math.max(1, currentPage - 1))}>
+      <PaginationButton
+        disabled={currentPage === 1}
+        onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+      >
         <PaginationPrevIcon />
       </PaginationButton>
 
-      <PaginationButton onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}>
+      <PaginationButton
+        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+      >
         <PaginationNextIcon />
       </PaginationButton>
 
-      <PaginationButton onClick={() => onPageChange(totalPages)}>
+      <PaginationButton
+        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(totalPages)}
+      >
         <PaginationFinalIcon />
       </PaginationButton>
 
@@ -60,7 +64,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
         <input
           type="number"
           value={inputValue}
-          // onBlur={handleInputBlur}
           onChange={handleInputChange}
           className="input w-16 p-1 input-sm input-bordered focus:outline-offset-0"
         />
