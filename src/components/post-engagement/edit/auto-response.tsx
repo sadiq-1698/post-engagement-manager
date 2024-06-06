@@ -38,7 +38,9 @@ const ASSISTANCE_TYPES = [
 const AutoResponse = () => {
   const [commentType, setCommentType] = useState<SelectOptionType>(COMMENT_TYPES[0]);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [integrationType, setIntegrationType] = useState<SelectOptionType>(INTEGRATION_TYPES[0]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [assistanceType, setAssistanceType] = useState<SelectOptionType>(ASSISTANCE_TYPES[0]);
   const [comments, setComments] = useState<Array<string>>([
     "explicabo a laboriosam fugit",

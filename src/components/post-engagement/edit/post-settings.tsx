@@ -43,7 +43,9 @@ const PostSettings = () => {
   const [triggerKeywordVal, setTriggerKeywordVal] = useState("");
 
   const [messageType, setMessageType] = useState(MESSAGE_TYPES[0]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [messageFlow, setMessageFlow] = useState(MESSAGE_FLOWS[0]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [textCard, setTextCard] = useState(TEXT_CARDS[0]);
 
   return (
