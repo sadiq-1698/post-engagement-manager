@@ -105,6 +105,9 @@ export const CAPTURE_TOOLS_OPTION = [
   },
 ];
 
+export const INSTAGRAM = "instagram";
+export const MESSENGER = "messenger";
+
 export const MOCK_TABLE_DATA = [
   {
     id: "1a2b",
@@ -112,7 +115,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "2b3c",
@@ -120,7 +123,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "3c4d",
@@ -128,7 +131,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "4d5e",
@@ -136,7 +139,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "5e6f",
@@ -144,7 +147,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "6f7g",
@@ -152,7 +155,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "7g8h",
@@ -160,7 +163,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "8h9i",
@@ -168,7 +171,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "9i0j",
@@ -176,7 +179,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "0j1k",
@@ -184,7 +187,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 66,
     conversion: "10%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "1k2l",
@@ -192,7 +195,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "60 / 30",
     acquired: 70,
     conversion: "15%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "2l3m",
@@ -200,7 +203,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "45 / 20",
     acquired: 55,
     conversion: "12%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "3m4n",
@@ -208,7 +211,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "70 / 35",
     acquired: 80,
     conversion: "18%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "4n5o",
@@ -216,7 +219,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "65 / 30",
     acquired: 75,
     conversion: "14%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "5o6p",
@@ -224,7 +227,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "55 / 25",
     acquired: 60,
     conversion: "11%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "6p7q",
@@ -232,7 +235,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "40 / 20",
     acquired: 50,
     conversion: "10%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "7q8r",
@@ -240,7 +243,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "80 / 40",
     acquired: 90,
     conversion: "20%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "8r9s",
@@ -248,7 +251,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "30 / 15",
     acquired: 40,
     conversion: "8%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "9s0t",
@@ -256,7 +259,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "50 / 25",
     acquired: 60,
     conversion: "10%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "0t1u",
@@ -264,7 +267,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "45 / 22",
     acquired: 55,
     conversion: "12%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "1u2v",
@@ -272,7 +275,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "70 / 35",
     acquired: 80,
     conversion: "18%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
   {
     id: "2v3w",
@@ -280,7 +283,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "55 / 27",
     acquired: 65,
     conversion: "15%",
-    platform: "messenger",
+    platform: MESSENGER,
   },
   {
     id: "3w4x",
@@ -288,7 +291,7 @@ export const MOCK_TABLE_DATA = [
     engaged: "60 / 30",
     acquired: 70,
     conversion: "16%",
-    platform: "instagram",
+    platform: INSTAGRAM,
   },
 ];
 
@@ -344,5 +347,71 @@ export const POST_ENGAGEMENT_BREADCRUMBS = [
   },
   {
     label: "Edit",
+  },
+];
+
+export const MESSAGE_TYPES = [
+  {
+    value: "flow",
+    label: "Flow",
+  },
+  {
+    value: "single-message",
+    label: "Single Message",
+  },
+];
+
+export const MESSAGE_FLOWS = [
+  {
+    value: "welcome-message",
+    label: "Welcome Message",
+  },
+  {
+    value: "default-reply",
+    label: "Default Reply",
+  },
+];
+
+export const TEXT_CARDS = [
+  {
+    value: "text-card-1",
+    label: "Text Card #1",
+  },
+  {
+    value: "text-card-2",
+    label: "Text Card #2",
+  },
+];
+
+export const COMMENT_TYPES = [
+  {
+    value: "static",
+    label: "Static",
+  },
+  {
+    value: "openai",
+    label: "Open AI",
+  },
+];
+
+export const INTEGRATION_TYPES = [
+  {
+    value: "integration-1",
+    label: "Integration 1",
+  },
+  {
+    value: "integration-2",
+    label: "Integration 2",
+  },
+];
+
+export const ASSISTANCE_TYPES = [
+  {
+    value: "assistance-1",
+    label: "Assistance 1",
+  },
+  {
+    value: "assistance-2",
+    label: "Assistance 2",
   },
 ];

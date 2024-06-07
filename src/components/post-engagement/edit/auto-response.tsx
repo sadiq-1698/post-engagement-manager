@@ -1,39 +1,7 @@
 import { useState } from "react";
 import AddComments from "./add-comments";
 import ClepherSelect, { SelectOptionType } from "./clepher-select";
-
-const COMMENT_TYPES = [
-  {
-    value: 'static',
-    label: 'Static',
-  },
-  {
-    value: 'openai',
-    label: 'Open AI',
-  }
-];
-
-const INTEGRATION_TYPES = [
-  {
-    value: 'integration-1',
-    label: 'Integration 1',
-  },
-  {
-    value: 'integration-2',
-    label: 'Integration 2',
-  }
-];
-
-const ASSISTANCE_TYPES = [
-  {
-    value: 'assistance-1',
-    label: 'Assistance 1',
-  },
-  {
-    value: 'assistance-2',
-    label: 'Assistance 2',
-  },
-];
+import { ASSISTANCE_TYPES, COMMENT_TYPES, INTEGRATION_TYPES } from "../../../enums";
 
 const AutoResponse = () => {
   const [commentType, setCommentType] = useState<SelectOptionType>(COMMENT_TYPES[0]);

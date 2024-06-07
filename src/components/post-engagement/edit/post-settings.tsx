@@ -1,39 +1,7 @@
 import React, { useState } from "react";
 import AddKeywords from "./add-keywords";
 import ClepherSelect from "./clepher-select";
-
-const MESSAGE_TYPES = [
-  {
-    value: 'flow',
-    label: 'Flow',
-  },
-  {
-    value: 'single-message',
-    label: 'Single Message',
-  }
-];
-
-const MESSAGE_FLOWS = [
-  {
-    value: 'welcome-message',
-    label: 'Welcome Message',
-  },
-  {
-    value: 'default-reply',
-    label: 'Default Reply',
-  }
-];
-
-const TEXT_CARDS = [
-  {
-    value: 'text-card-1',
-    label: 'Text Card #1',
-  },
-  {
-    value: 'text-card-2',
-    label: 'Text Card #2',
-  }
-];
+import { MESSAGE_FLOWS, MESSAGE_TYPES, TEXT_CARDS } from "../../../enums";
 
 const PostSettings = () => {
   const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);
