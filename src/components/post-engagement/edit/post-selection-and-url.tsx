@@ -7,7 +7,7 @@ const PostSelectionAndUrl = () => {
 
   return (
     <div className="basis-3/5">
-      <div role="tablist" className="tabs h-12 bg-base-100 p-0 child:!rounded-none rounded-b-none border-b border-b-base-300 tabs-boxed tabs-lg">
+      <div role="tablist" className="tabs h-12 bg-base-100 p-0 child-rounded-none rounded-b-none border-b border-b-base-300 tabs-boxed tabs-lg">
         <button role="tab" className={`tab ${tabIndex === 0 ? 'tab-active' : ''}`} onClick={() => setTabIndex(0)}>
           Select A Post
         </button>
