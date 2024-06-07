@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MESSENGER } from '../../enums';
 import InstagramIcon from "../../assets/svgs/instagram.svg";
 import MessengerBlurpleIcon from "../../assets/svgs/message-blurple.svg";
 
@@ -73,8 +74,8 @@ const PostEngagementsTable = ({
                   <td className='w-5'>
                     <img
                       className="h-3.5 w-3.5"
-                      alt={el.platform === "messenger" ? "messenger-blurple" : "insta-og"}
-                      src={el.platform === "messenger" ? InstagramIcon : MessengerBlurpleIcon}
+                      alt={el.platform === MESSENGER ? "messenger-blurple" : "insta-og"}
+                      src={el.platform === MESSENGER ? InstagramIcon : MessengerBlurpleIcon}
                     />
                   </td>
                   <td className='w-[150px]'>{el.name}</td>
