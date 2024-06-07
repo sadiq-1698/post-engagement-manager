@@ -22,7 +22,7 @@ function App() {
               <Routes>
                 {/* CAPTURE TOOLS ROUTE DEFINITIONS */}
                 <Route path="/" element={<Navigate to="/capture-tools" />} />
-                <Route path="/capture-tools/" element={<Navigate to="/capture-tools/links-library" />} />
+                <Route path="/capture-tools/" element={<Navigate to="/capture-tools/post-engagement" />} />
 
                 <Route path="capture-tools/*" Component={CaptureToolsPage}>
                   <Route path="post-engagement" Component={PostEngagement} />
