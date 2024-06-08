@@ -4,7 +4,12 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("child", "& > *");
+    },
+    require("daisyui"),
+  ],
   daisyui: {
     themes: ["light", "dark"], // Enable light and dark themes
   },
