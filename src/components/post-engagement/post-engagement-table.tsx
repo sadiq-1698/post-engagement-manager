@@ -43,7 +43,7 @@ const PostEngagementsTable = ({
             <th colSpan={1}>
               <div className="px-1"></div>
             </th>
-            <th colSpan={1}>
+            <th colSpan={1} className='w-[150px]'>
               <div className="cursor-pointer select-none" onClick={() => handleHeaderClick('name')}>
                 Name
                 <SortArrow sortOrder={sortingOrder} />
@@ -91,7 +91,7 @@ const PostEngagementsTable = ({
                       />
                     </div>
                   </td>
-                  <td>{el.name}</td>
+                  <td className='w-[150px]'>{el.name}</td>
                   <td>{el.engaged}</td>
                   <td>{el.acquired}</td>
                   <td>{el.conversion}</td>
