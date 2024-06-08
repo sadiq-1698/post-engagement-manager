@@ -1,11 +1,14 @@
+import Pagination from "./pagination";
+import TableActions from "./table-actions";
 import { MOCK_TABLE_DATA } from "../../enums";
 import { useEffect, useRef, useState } from "react";
 import PostEngagementsTable from "./post-engagement-table";
-import TableActions from "./table-actions";
-import Pagination from "./pagination";
+
+export type TableSortOrder = 'asc' | 'desc' | 'reset'
 
 const PostEngagement = () => {
-  const [data, setData] = useState(MOCK_TABLE_DATA);
+  const [sortingOrder, setSortingOrder] = useState<TableSortOrder>('reset');
+  const [sortedData, setSortedData] = useState(MOCK_TABLE_DATA);
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -26,8 +29,8 @@ const PostEngagement = () => {
   };
 
   const handleBulkDelete = () => {
-    const newData = data.filter((_, idx) => !selectedRows.includes(idx));
-    setData([...newData]);
+    const newData = sortedData.filter((_, idx) => !selectedRows.includes(idx));
+    setSortedData([...newData]);
     setSelectedRows([]);
   };
 
@@ -44,7 +47,26 @@ const PostEngagement = () => {
     }
   };
 
-  const filteredData = data.filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()));
+  const handleHeaderClick = (key: string) => {
+    let newOrder: TableSortOrder = 'reset';
+    let sortedArray = [...sortedData];
+
+    if (sortingOrder === 'reset') {
+      newOrder = 'asc';
+      sortedArray.sort((a, b) => (a[key as keyof typeof a] as string).localeCompare(b[key as keyof typeof b] as string));
+    } else if (sortingOrder === 'asc') {
+      newOrder = 'desc';
+      sortedArray.sort((a, b) => (b[key as keyof typeof b] as string).localeCompare(a[key as keyof typeof a] as string));
+    } else {
+      newOrder = 'reset';
+      sortedArray = MOCK_TABLE_DATA;
+    }
+
+    setSortingOrder(newOrder);
+    setSortedData([...sortedArray]);
+  };
+
+  const filteredData = sortedData.filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()));
   const totalPages = Math.ceil(filteredData.length / rowsPerPage);
   const startRow = (currentPage - 1) * rowsPerPage;
   const currentData = filteredData.slice(startRow, startRow + rowsPerPage);
@@ -55,7 +77,6 @@ const PostEngagement = () => {
       selectAllRef.current.checked = selectedRows.length === currentData.length;
     }
   }, [selectedRows, currentData.length]);
-
 
   return (
     <div className="lg:col-span-7">
@@ -70,8 +91,10 @@ const PostEngagement = () => {
           currentData={currentData}
           selectedRows={selectedRows}
           selectAllRef={selectAllRef}
+          sortingOrder={sortingOrder}
           handleSelectAll={handleSelectAll}
           handleSelectRow={handleSelectRow}
+          handleHeaderClick={handleHeaderClick}
         />
 
         <Pagination
