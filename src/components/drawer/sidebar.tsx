@@ -5,7 +5,7 @@ const Sidebar = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="drawer-side">
+    <div className="drawer-side z-10">
       <label className="drawer-overlay" htmlFor="my-drawer"></label>
 
       <ul className="menu border-r border-r-base-300 min-h-full bg-base-100 pt-20">
