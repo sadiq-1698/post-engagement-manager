@@ -11,6 +11,14 @@ module.exports = {
     require("daisyui"),
   ],
   daisyui: {
-    themes: ["light", "dark"], // Enable light and dark themes
+    themes: [
+      "winter",
+      "night",
+      {
+        mytheme: {
+          "base-200": "#000000",
+        },
+      },
+    ], // Enable light and dark themes
   },
 };

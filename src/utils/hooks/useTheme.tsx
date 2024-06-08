@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useTheme = () => {
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('clepher-theme');
-    return savedTheme ? savedTheme : 'light';
+    return savedTheme ? savedTheme : 'winter';
   });
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const useTheme = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme) => (prevTheme === 'winter' ? 'night' : 'winter'));
   };
 
   return { theme, toggleTheme };
