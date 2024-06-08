@@ -30,7 +30,7 @@ const PostEngagementsTable = ({
       <table className="table table-sm bg-base-100 px-6" style={{ position: 'initial' }}>
         <thead>
           <tr>
-            <th colSpan={1}>
+            <th colSpan={1} className='w-5'>
               <div className="px-1">
                 <input
                   type="checkbox"
@@ -40,7 +40,7 @@ const PostEngagementsTable = ({
                 />
               </div>
             </th>
-            <th colSpan={1}>
+            <th colSpan={1} className='w-5'>
               <div className="px-1"></div>
             </th>
             <th colSpan={1} className='w-[150px]'>
@@ -49,16 +49,16 @@ const PostEngagementsTable = ({
                 <SortArrow sortOrder={sortingOrder} />
               </div>
             </th>
-            <th colSpan={1}>
+            <th colSpan={1} className='w-[150px]'>
               <div className="px-1">Engaged / Unique</div>
             </th>
-            <th colSpan={1}>
+            <th colSpan={1} className='w-[150px]'>
               <div className="px-1">Acquired</div>
             </th>
-            <th colSpan={1}>
+            <th colSpan={1} className='w-[150px]'>
               <div className="px-1">Conversion</div>
             </th>
-            <th colSpan={1}>
+            <th colSpan={1} className='w-5'>
               <div className="px-1">Action</div>
             </th>
           </tr>
@@ -72,7 +72,7 @@ const PostEngagementsTable = ({
 
               return (
                 <tr key={el.name + "-" + idx}>
-                  <td>
+                  <td className='w-5'>
                     <div className="px-1">
                       <input
                         type="checkbox"
@@ -82,20 +82,18 @@ const PostEngagementsTable = ({
                       />
                     </div>
                   </td>
-                  <td>
-                    <div className='w-3.5 h-3.5'>
-                      <img
-                        className="h-full w-full"
-                        alt={el.platform === MESSENGER ? "messenger-blurple" : "insta-og"}
-                        src={el.platform === MESSENGER ? MessengerBlurpleIcon : InstagramIcon}
-                      />
-                    </div>
+                  <td className='w-5'>
+                    <img
+                      className='w-3.5 h-3.5'
+                      alt={el.platform === MESSENGER ? "messenger-blurple" : "insta-og"}
+                      src={el.platform === MESSENGER ? MessengerBlurpleIcon : InstagramIcon}
+                    />
                   </td>
                   <td className='w-[150px]'>{el.name}</td>
-                  <td>{el.engaged}</td>
-                  <td>{el.acquired}</td>
-                  <td>{el.conversion}</td>
-                  <td>
+                  <td className='w-[150px]'>{el.engaged}</td>
+                  <td className='w-[150px]'>{el.acquired}</td>
+                  <td className='w-[150px]'>{el.conversion}</td>
+                  <td className='w-5'>
                     <div role="listbox" className={`dropdown ${dropDownOverflowClass} dropdown-end`}>
                       <label tabIndex={1}>
                         <button className="btn btn-xs btn-outline">Actions</button>
