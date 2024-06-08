@@ -350,6 +350,8 @@ export const POST_ENGAGEMENT_BREADCRUMBS = [
   },
 ];
 
+export const STATIC_COMMENTS_HARD_LIMIT = 10;
+
 export const MESSAGE_TYPES = [
   {
     value: "flow",
