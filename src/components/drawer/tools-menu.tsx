@@ -1,4 +1,4 @@
-import { CAPTURE_TOOLS_OPTION } from "../../enums";
+import { CAPTURE_TOOLS_OPTION } from "enums";
 import { Link, useLocation } from "react-router-dom";
 
 const ToolsMenu = () => {
