@@ -4,10 +4,10 @@ import { ReactComponent as CaretDownIcon } from "../../assets/svgs/caret-down.sv
 type TableActionsProps = {
   searchQuery: string,
   onSearchChange: (query: string) => void,
-  onBulkDelete: () => void
+  bulkActions: { label: string, action: () => void }[]
 }
 
-const TableActions = ({ searchQuery, onSearchChange, onBulkDelete }: TableActionsProps) => {
+const TableActions = ({ searchQuery, onSearchChange, bulkActions }: TableActionsProps) => {
   return (
     <div className="mb-2 flex flex-row items-end gap-2">
       <div className="grow truncate">
@@ -36,20 +36,27 @@ const TableActions = ({ searchQuery, onSearchChange, onBulkDelete }: TableAction
           </button>
         </label>
         <ul
+          role="menu"
           tabIndex={0}
           className="dropdown-content menu p-2 shadow bg-base-100 rounded-box menu-sm z-[1] mt-1 w-48"
-          role="menu"
         >
           <li role="menuitem">
-            <a
-              href="/"
-              onClick={(e) => {
-                e.preventDefault();
-                onBulkDelete();
-              }}
-            >
-              Delete
-            </a>
+            {
+              bulkActions.map((el, idx) => {
+                return (
+                  <a
+                    href="/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      el.action();
+                    }}
+                    key={el.label +"|=|" + idx}
+                  >
+                    {el.label}
+                  </a>
+                );
+              })
+            }
           </li>
         </ul>
       </div>

@@ -1,5 +1,5 @@
 import Breadcrumbs from "./breadcrumbs";
-import { POST_ENGAGEMENT_BREADCRUMBS } from "../../../enums";
+import { POST_ENGAGEMENT_BREADCRUMBS } from "../../../enums/index";
 
 const EditHeader = () => {
   return (

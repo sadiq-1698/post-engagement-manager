@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AddKeywords from "./add-keywords";
 import ClepherSelect from "./clepher-select";
-import { MESSAGE_FLOWS, MESSAGE_TYPES, TEXT_CARDS } from "../../../enums";
+import { MESSAGE_FLOWS, MESSAGE_TYPES, TEXT_CARDS } from "../../../enums/index";
 
 const PostSettings = () => {
   const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);

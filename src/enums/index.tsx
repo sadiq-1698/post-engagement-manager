@@ -24,6 +24,12 @@ import { ReactComponent as StatusIcon } from "../assets/svgs/status.svg";
 import { ReactComponent as CommunityIcon } from "../assets/svgs/community.svg";
 import { ReactComponent as KnowledgeBaseIcon } from "../assets/svgs/knowledge-base.svg";
 
+import InstagramIcon from "../assets/svgs/instagram.svg";
+import MessengerBlurpleIcon from "../assets/svgs/message-blurple.svg";
+
+import { TableHeaders } from "../components/post-engagement";
+import TableRowAction from "../components/post-engagement/table-row-action";
+
 export const SIDEBAR_MENU = [
   {
     label: "Dashboard",
@@ -321,17 +327,17 @@ export const PROFILE_DROPDOWN_OPTIONS = [
 export const STATUS_OPTIONS = [
   {
     label: "Status",
-    svg: <StatusIcon />,
+    svg: StatusIcon,
     url: "https://status.clepher.com/",
   },
   {
     label: "Community",
-    svg: <CommunityIcon />,
+    svg: CommunityIcon,
     url: "https://www.facebook.com/groups/clepher/",
   },
   {
     label: "Knowledge Base",
-    svg: <KnowledgeBaseIcon />,
+    svg: KnowledgeBaseIcon,
     url: "https://clepher.com/support/",
   },
 ];
@@ -350,7 +356,7 @@ export const POST_ENGAGEMENT_BREADCRUMBS = [
   },
 ];
 
-export const STATIC_COMMENTS_HARD_LIMIT = 10;
+export const STATIC_COMMENTS_HARD_LIMIT: number = 10;
 
 export const MESSAGE_TYPES = [
   {
@@ -415,5 +421,49 @@ export const ASSISTANCE_TYPES = [
   {
     value: "assistance-2",
     label: "Assistance 2",
+  },
+];
+
+export const POST_ENGAGEMENT_HEADERS: TableHeaders = [
+  {
+    key: "platform",
+    label: "",
+    className: "w-5",
+    render: (value) => (
+      <img
+        className="w-3.5 h-3.5"
+        alt={value === MESSENGER ? "messenger-blurple" : "insta-og"}
+        src={value === MESSENGER ? MessengerBlurpleIcon : InstagramIcon}
+      />
+    ),
+  },
+  {
+    key: "name",
+    label: "Name",
+    sortable: true,
+    className: "w-[150px]",
+  },
+  {
+    key: "engaged",
+    label: "Engaged / Unique",
+    className: "w-[150px]",
+  },
+  {
+    key: "acquired",
+    label: "Acquired",
+    className: "w-[150px]",
+  },
+  {
+    key: "conversion",
+    label: "Conversion",
+    className: "w-[150px]",
+  },
+  {
+    key: "id",
+    label: "Action",
+    className: "w-5",
+    render: (value, index, data) => (
+      <TableRowAction data={data} tableRow={index as number} value={value} />
+    ),
   },
 ];
