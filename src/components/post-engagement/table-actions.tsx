@@ -1,5 +1,5 @@
-import { ReactComponent as SearchIcon } from "../../assets/svgs/search.svg";
-import { ReactComponent as CaretDownIcon } from "../../assets/svgs/caret-down.svg";
+import { ReactComponent as SearchIcon } from "assets/svgs/search.svg";
+import { ReactComponent as CaretDownIcon } from "assets/svgs/caret-down.svg";
 
 type TableActionsProps = {
   searchQuery: string,

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import AddComments from "./add-comments";
-import ClepherSelect, { SelectOptionType } from "./clepher-select";
-import { ASSISTANCE_TYPES, COMMENT_TYPES, INTEGRATION_TYPES } from "../../../enums/index";
+import AddComments from "components/common/add-comments";
+import { ASSISTANCE_TYPES, COMMENT_TYPES, INTEGRATION_TYPES } from "enums";
+import ClepherSelect, { SelectOptionType } from "components/common/clepher-select";
 
 const AutoResponse = () => {
   const [commentType, setCommentType] = useState<SelectOptionType>(COMMENT_TYPES[0]);

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import PostSettings from "./post-settings";
-import AutoResponse from "./auto-response";
+import PostSettings from "components/post-engagement/edit/post-settings";
+import AutoResponse from "components/post-engagement/edit/auto-response";
 
 const SettingsAndResponse = () => {
   const [tabIndex, setTabIndex] = useState(0);

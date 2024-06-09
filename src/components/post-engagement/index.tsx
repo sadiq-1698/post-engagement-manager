@@ -1,8 +1,8 @@
-import TableActions from "./table-actions";
-import ClepherTable from "../common/clepher-table";
+import Pagination from "components/common/pagination";
 import React, { useEffect, useRef, useState } from "react";
-import { MOCK_TABLE_DATA, POST_ENGAGEMENT_HEADERS } from "../../enums";
-import Pagination from "../common/pagination";
+import ClepherTable from "components/common/clepher-table";
+import { MOCK_TABLE_DATA, POST_ENGAGEMENT_HEADERS } from "enums";
+import TableActions from "components/post-engagement/table-actions";
 
 export type TableSortOrder = 'asc' | 'desc' | 'reset'
 

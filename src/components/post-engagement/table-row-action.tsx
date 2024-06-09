@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { TableRowDataType } from "../common/clepher-table";
+import { TableRowDataType } from "components/common/clepher-table";
 
 type TableRowActionProps = {
   value: any

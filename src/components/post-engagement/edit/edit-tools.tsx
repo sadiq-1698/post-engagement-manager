@@ -1,5 +1,5 @@
-import SettingsAndResponse from "./settings-and-response";
-import PostSelectionAndUrl from "./post-selection-and-url";
+import SettingsAndResponse from "components/post-engagement/edit/settings-and-response";
+import PostSelectionAndUrl from "components/post-engagement/edit/post-selection-and-url";
 
 const EditTools = () => {
   return (
