@@ -1,4 +1,4 @@
-import ClepherBadge from "./clepher-badge";
+import ClepherBadge from "components/common/clepher-badge";
 
 type AddKeywordsProp = {
   value: string,

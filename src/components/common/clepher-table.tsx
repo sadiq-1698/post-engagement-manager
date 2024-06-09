@@ -1,5 +1,5 @@
-import SortArrow from "../common/sort-arrow";
-import { TableHeaders, TableSortOrder } from "../post-engagement";
+import SortArrow from "components/common/sort-arrow";
+import { TableHeaders, TableSortOrder } from "components/post-engagement";
 
 export type TableRowDataType = {
   id: string,

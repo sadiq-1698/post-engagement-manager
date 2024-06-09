@@ -1,4 +1,4 @@
-import { STATIC_COMMENTS_HARD_LIMIT } from "../../enums";
+import { STATIC_COMMENTS_HARD_LIMIT } from "enums";
 
 type AddCommentsProp = {
   comments: Array<string>,
