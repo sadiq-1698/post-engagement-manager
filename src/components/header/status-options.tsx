@@ -1,5 +1,5 @@
-import { STATUS_OPTIONS } from "../../enums/index";
-import { ReactComponent as HeaderStatusIcon } from "../../assets/svgs/header-status.svg"
+import { STATUS_OPTIONS } from "enums";
+import { ReactComponent as HeaderStatusIcon } from "assets/svgs/header-status.svg"
 
 const StatusOptions = () => {
   return (

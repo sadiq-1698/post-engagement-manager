@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ReactComponent as HamburgerIcon } from '../../assets/svgs/hamburger.svg'
+import { ReactComponent as HamburgerIcon } from 'assets/svgs/hamburger.svg'
 
 const AppLogo = () => {
   return (

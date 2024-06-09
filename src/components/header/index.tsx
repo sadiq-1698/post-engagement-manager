@@ -1,9 +1,9 @@
-import AppLogo from "./logo";
-import HeaderClientLink from "./link";
-import ShieldOption from "./shield-option";
-import ThemeToggler from "./theme-toggler";
-import StatusOptions from "./status-options";
-import ProfileDropdown from "./profile-dropdown";
+import AppLogo from "components/header/logo";
+import HeaderClientLink from "components/header/link";
+import ShieldOption from "components/header/shield-option";
+import ThemeToggler from "components/header/theme-toggler";
+import StatusOptions from "components/header/status-options";
+import ProfileDropdown from "components/header/profile-dropdown";
 
 const Header = () => {
   return (
