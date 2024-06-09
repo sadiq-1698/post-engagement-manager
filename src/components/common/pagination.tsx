@@ -1,9 +1,9 @@
 import { useState } from "react";
-import PaginationButton from "./pagination-btn";
-import { ReactComponent as PaginationPrevIcon } from "../../assets/svgs/pagination-prev.svg";
-import { ReactComponent as PaginationNextIcon } from "../../assets/svgs/pagination-next.svg";
-import { ReactComponent as PaginationFinalIcon } from "../../assets/svgs/pagination-final.svg";
-import { ReactComponent as PaginationInitialIcon } from "../../assets/svgs/pagination-initial.svg";
+import PaginationButton from "components/common/pagination-btn";
+import { ReactComponent as PaginationPrevIcon } from "assets/svgs/pagination-prev.svg";
+import { ReactComponent as PaginationNextIcon } from "assets/svgs/pagination-next.svg";
+import { ReactComponent as PaginationFinalIcon } from "assets/svgs/pagination-final.svg";
+import { ReactComponent as PaginationInitialIcon } from "assets/svgs/pagination-initial.svg";
 
 type PaginationProps = {
   currentPage: number,

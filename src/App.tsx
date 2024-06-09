@@ -7,7 +7,6 @@ import PostEngagement from './components/post-engagement';
 import DrawerToggle from './components/drawer/drawer-toggle';
 import PostEngagementEdit from './components/post-engagement/edit';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-// htmlFor="my-drawer-4"
 
 function App() {
   return (

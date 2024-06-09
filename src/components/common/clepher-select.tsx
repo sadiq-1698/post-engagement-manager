@@ -34,7 +34,7 @@ const ClepherSelect = ({ label, options, includeSelect = false, onSelect }: Clep
           }
           {
             options.map((el, idx) => {
-              const defaultSelected = idx === 0;
+              const defaultSelected = idx === 0 && !includeSelect;
               return (
                 <option value={el.value} selected={defaultSelected}>
                   {el.label}

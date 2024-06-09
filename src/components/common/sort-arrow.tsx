@@ -1,4 +1,4 @@
-import { TableSortOrder } from "../post-engagement";
+import { TableSortOrder } from "components/post-engagement";
 
 const SortArrow = ({ sortOrder, className = "" }: { sortOrder: TableSortOrder, className?: string }) => {
   const sortIconClass = sortOrder === 'reset' ? 'opacity-0' : sortOrder === 'desc' ? '' : 'rotate-180';

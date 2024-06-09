@@ -1,5 +1,5 @@
-import { STATUS_OPTIONS } from "../../enums";
-import { ReactComponent as HeaderStatusIcon } from "../../assets/svgs/header-status.svg"
+import { STATUS_OPTIONS } from "enums";
+import { ReactComponent as HeaderStatusIcon } from "assets/svgs/header-status.svg"
 
 const StatusOptions = () => {
   return (
@@ -15,7 +15,7 @@ const StatusOptions = () => {
             return (
               <li role="menuitem" key={el.url}>
                 <a href={el.url} target="_blank" rel="noreferrer">
-                  {el.svg}{" "}{el.label}
+                  <el.svg />{" "}{el.label}
                 </a>
               </li>
             );

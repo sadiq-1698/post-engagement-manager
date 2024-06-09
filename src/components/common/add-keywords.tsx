@@ -1,4 +1,4 @@
-import ClepherBadge from "./clepher-badge";
+import ClepherBadge from "components/common/clepher-badge";
 
 type AddKeywordsProp = {
   value: string,
@@ -25,21 +25,6 @@ const AddKeywords = ({
     setterFunc(e.target.value);
   }
 
-  const handleKeyPress = (
-    e: React.KeyboardEvent<HTMLInputElement>,
-    keyword: string,
-    array: Array<string>,
-    arraySetterFunc: React.Dispatch<Array<string>>,
-    clearField: React.Dispatch<string>
-  ) => {
-    if (e.key === 'Enter') {
-      if (keyword.trim().length < 1) return;
-      const res = [...array, keyword];
-      arraySetterFunc([...res]);
-      clearField("");
-    }
-  };
-
   const handleAddKeyword = (
     keyword: string,
     array: Array<string>,
@@ -51,6 +36,16 @@ const AddKeywords = ({
     arraySetterFunc([...res]);
     clearField("");
   }
+
+  const handleKeyPress = (
+    e: React.KeyboardEvent<HTMLInputElement>,
+    keyword: string,
+    array: Array<string>,
+    arraySetterFunc: React.Dispatch<Array<string>>,
+    clearField: React.Dispatch<string>
+  ) => {
+    if (e.key === 'Enter') handleAddKeyword(keyword, array, arraySetterFunc, clearField);
+  };
 
   return (
     <div className="form-control">

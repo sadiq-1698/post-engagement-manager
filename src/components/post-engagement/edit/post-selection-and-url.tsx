@@ -1,6 +1,6 @@
 import { useState } from "react";
-import PostUrl from "./post-url";
-import SelectPost from "./select-post";
+import PostUrl from "components/post-engagement/edit/post-url";
+import SelectPost from "components/post-engagement/edit/select-post";
 
 const PostSelectionAndUrl = () => {
   const [tabIndex, setTabIndex] = useState(0);

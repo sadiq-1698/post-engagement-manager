@@ -1,13 +1,21 @@
-import Pagination from "./pagination";
-import TableActions from "./table-actions";
-import { MOCK_TABLE_DATA } from "../../enums";
-import { useEffect, useRef, useState } from "react";
-import PostEngagementsTable from "./post-engagement-table";
+import Pagination from "components/common/pagination";
+import React, { useEffect, useRef, useState } from "react";
+import ClepherTable from "components/common/clepher-table";
+import { MOCK_TABLE_DATA, POST_ENGAGEMENT_HEADERS } from "enums";
+import TableActions from "components/post-engagement/table-actions";
 
 export type TableSortOrder = 'asc' | 'desc' | 'reset'
 
+export type TableHeaders = Array<{
+  key: string,
+  label: string,
+  sortable?: boolean,
+  className?: string,
+  render?: (value: any, index?: number, data?: any) => React.ReactNode
+}>
+
 const PostEngagement = () => {
-  const [sortingOrder, setSortingOrder] = useState<TableSortOrder>('reset');
+  const [sortOrder, setSortOrder] = useState<TableSortOrder>('reset');
   const [sortedData, setSortedData] = useState(MOCK_TABLE_DATA);
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -18,7 +26,6 @@ const PostEngagement = () => {
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const selectAllRef = useRef<HTMLInputElement>(null);
 
-
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
@@ -26,12 +33,6 @@ const PostEngagement = () => {
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
     setCurrentPage(1);
-  };
-
-  const handleBulkDelete = () => {
-    const newData = sortedData.filter((_, idx) => !selectedRows.includes(idx));
-    setSortedData([...newData]);
-    setSelectedRows([]);
   };
 
   const handleSelectRow = (index: number) => {
@@ -47,14 +48,20 @@ const PostEngagement = () => {
     }
   };
 
-  const handleHeaderClick = (key: string) => {
+  const handleBulkDelete = () => {
+    const newData = sortedData.filter((_, idx) => !selectedRows.includes(idx));
+    setSortedData([...newData]);
+    setSelectedRows([]);
+  };
+
+  const handleSort = (key: string) => {
     let newOrder: TableSortOrder = 'reset';
     let sortedArray = [...sortedData];
 
-    if (sortingOrder === 'reset') {
+    if (sortOrder === 'reset') {
       newOrder = 'asc';
       sortedArray.sort((a, b) => (a[key as keyof typeof a] as string).localeCompare(b[key as keyof typeof b] as string));
-    } else if (sortingOrder === 'asc') {
+    } else if (sortOrder === 'asc') {
       newOrder = 'desc';
       sortedArray.sort((a, b) => (b[key as keyof typeof b] as string).localeCompare(a[key as keyof typeof a] as string));
     } else {
@@ -62,7 +69,7 @@ const PostEngagement = () => {
       sortedArray = MOCK_TABLE_DATA;
     }
 
-    setSortingOrder(newOrder);
+    setSortOrder(newOrder);
     setSortedData([...sortedArray]);
   };
 
@@ -83,18 +90,19 @@ const PostEngagement = () => {
       <div className="px-6">
         <TableActions
           searchQuery={searchQuery}
-          onBulkDelete={handleBulkDelete}
           onSearchChange={handleSearchChange}
+          bulkActions={[{ label: 'Delete', action: handleBulkDelete }]}
         />
 
-        <PostEngagementsTable
-          currentData={currentData}
+        <ClepherTable
+          data={currentData}
+          sortOrder={sortOrder}
+          handleSort={handleSort}
           selectedRows={selectedRows}
           selectAllRef={selectAllRef}
-          sortingOrder={sortingOrder}
           handleSelectAll={handleSelectAll}
           handleSelectRow={handleSelectRow}
-          handleHeaderClick={handleHeaderClick}
+          headers={POST_ENGAGEMENT_HEADERS}
         />
 
         <Pagination

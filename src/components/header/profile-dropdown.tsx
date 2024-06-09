@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PROFILE_DROPDOWN_OPTIONS } from "../../enums";
+import { PROFILE_DROPDOWN_OPTIONS } from "enums/index";
 
 const ProfileDropdown = () => {
   return (

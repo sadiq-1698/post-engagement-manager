@@ -1,4 +1,4 @@
-import { SIDEBAR_MENU } from "../../enums";
+import { SIDEBAR_MENU } from "enums";
 import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
