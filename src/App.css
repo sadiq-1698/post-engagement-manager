@@ -5,16 +5,172 @@
 }
 
 .badge-clepher {
-    background-color: rgb(222 239 255/1);
-    border-color: rgb(199 228 255/1);
-    border-width: 1px;
-    border-radius: 1.9rem;
-    font-size: .875rem;
     height: 1.25rem;
-    line-height: 1.25rem;
     margin: 0.125rem;
-    padding: 0.875rem 0.625rem;
-    display: inline-flex;
-    justify-content: center;
+    border-width: 1px;
+    font-size: .875rem;
     align-items: center;
+    line-height: 1.25rem;
+    display: inline-flex;
+    border-radius: 1.9rem;
+    justify-content: center;
+    padding: 0.875rem 0.625rem;
+    border-color: rgb(199 228 255/1);
+    background-color: rgb(222 239 255/1);
+}
+
+.reaction {
+    top: 8px;
+    opacity: 0;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    position: absolute;
+    list-style-type: none;
+    display: inline-block;
+    transform: scale(1, 1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: opacity 0.5s ease-in-out 1s, transform 0.07s ease-in-out 0s, top 0.07s ease-in-out 0s;
+}
+
+.reaction::before {
+    width: 80%;
+    top: -25px;
+    opacity: 0;
+    height: 17px;
+    margin-left: 10%;
+    color: #ffffff;
+    font-size: 0.7em;
+    line-height: 17px;
+    text-align: center;
+    position: absolute;
+    border-radius: 20px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.2s ease-in-out 0s;
+}
+
+.reaction:hover {
+    top: 2px;
+    transform: scale(1.3, 1.3);
+}
+
+.reaction:hover::before {
+    opacity: 1;
+}
+
+#add_positive_reaction:hover .reaction {
+    opacity: 1;
+    animation-duration: 0.5s;
+    animation-name: reaction_delay;
+}
+
+.reaction-like::before {
+    content: "Like";
+}
+
+#add_positive_reaction:hover .reaction-love {
+    animation-delay: 0.05s;
+}
+
+.reaction-love::before {
+    content: "Love";
+}
+
+#add_positive_reaction:hover .reaction-haha {
+    animation-delay: 0.1s;
+}
+
+.reaction-haha::before {
+    content: "Haha";
+}
+
+#add_positive_reaction:hover .reaction-wow {
+    animation-delay: 0.15s;
+}
+
+.reaction-wow::before {
+    content: "Wow";
+}
+
+#add_positive_reaction:hover .reaction-sad {
+    animation-delay: 0.2s;
+}
+
+.reaction-sad::before {
+    content: "Sad";
+}
+
+#add_positive_reaction:hover .reaction-angry {
+    animation-delay: 0.25s;
+}
+
+.reaction-angry::before {
+    content: "Angry";
+}
+
+.reactions-box {
+    height: 85px;
+    width: 360px;
+    margin: auto;
+    padding: 10px;
+    display: none;
+    position: relative;
+    border-radius: 44px 44px;
+}
+
+#add_positive_reaction:hover .reactions-box {
+    display: block;
+}
+
+.reaction-like {
+    left: 10px;
+    transition-delay: 0s;
+    background-image: url("assets/images/reactions_like.png");
+}
+
+.reaction-love {
+    left: 68px;
+    transition-delay: 0.05s;
+    background-image: url("assets/images/reactions_love.png");
+}
+
+.reaction-haha {
+    left: 126px;
+    transition-delay: 0.1s;
+    background-image: url("assets/images/reactions_haha.png");
+}
+
+.reaction-wow {
+    left: 184px;
+    transition-delay: 0.15s;
+    background-image: url("assets/images/reactions_wow.png");
+}
+
+.reaction-sad {
+    left: 242px;
+    transition-delay: 0.2s;
+    background-image: url("assets/images/reactions_sad.png");
+}
+
+.reaction-angry {
+    left: 300px;
+    transition-delay: 0.25s;
+    background-image: url("assets/images/reactions_angry.png");
+}
+
+@keyframes reaction_delay {
+    0% {
+        @apply w-12 h-12 top-[60px];
+    }
+
+    48% {
+        @apply w-14 h-14 top-[5px];
+    }
+
+    100% {
+        @apply w-12 h-12 top-2;
+    }
 }
