@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
-import Header from './components/header';
-import Sidebar from './components/drawer/sidebar';
-import CaptureToolsPage from './pages/capture-tools';
-import PostEngagement from './components/post-engagement';
-import DrawerToggle from './components/drawer/drawer-toggle';
-import PostEngagementEdit from './components/post-engagement/edit';
+import Header from 'components/header';
+import Sidebar from 'components/drawer/sidebar';
+import CaptureToolsPage from 'pages/capture-tools';
+import PostEngagement from 'components/post-engagement';
+import DrawerToggle from 'components/drawer/drawer-toggle';
+import PostEngagementEdit from 'components/post-engagement/edit';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 function App() {
