@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddComments from "components/common/add-comments";
+import SubHeader from "components/post-engagement/edit/sub-header";
 import { ASSISTANCE_TYPES, COMMENT_TYPES, INTEGRATION_TYPES } from "enums";
 import ClepherSelect, { SelectOptionType } from "components/common/clepher-select";
 
@@ -29,12 +30,12 @@ const AutoResponse = () => {
 
       <br />
 
-      <h1 className="border-b border-b-base-300 mb-2.5 py-0.5 font-semibold">
+      <SubHeader>
         Reply In Comments
-      </h1>
+      </SubHeader>
 
       <ClepherSelect
-        label="Comment Type"
+        label="Comment type"
         options={COMMENT_TYPES}
         onSelect={setCommentType}
       />

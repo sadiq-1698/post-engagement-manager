@@ -1,7 +1,9 @@
 import { ToolsOption } from "types/global";
 import { Link, useLocation } from "react-router-dom";
 
-const ToolsMenu = ({ title, options }: { title?: string, options: ToolsOption }) => {
+export type ToolsMenuProps = { title?: string, options: ToolsOption }
+
+const ToolsMenu = ({ title, options }: ToolsMenuProps) => {
   const { pathname } = useLocation();
 
   return (

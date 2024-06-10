@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import AddKeywords from "components/common/add-keywords";
 import ClepherSelect from "components/common/clepher-select";
 import { MESSAGE_FLOWS, MESSAGE_TYPES, TEXT_CARDS } from "enums";
+import SubHeader from "components/post-engagement/edit/sub-header";
+import ClepherReactionBox from "components/common/clepher-reaction-box";
 
 const PostSettings = () => {
   const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);
   const [triggerKeywords, setTriggerKeywords] = useState<Array<string>>([]);
+  const [positiveReactions, setPositiveReactions] = useState<Array<{ key: string, label: string }>>([]);
 
   const [excludeKeywordVal, setExcludeKeywordVal] = useState("");
   const [triggerKeywordVal, setTriggerKeywordVal] = useState("");
@@ -38,34 +41,17 @@ const PostSettings = () => {
 
       <br />
 
-      <h1 className="border-b border-b-base-300">
+      <SubHeader>
         Require a Post Reaction
-      </h1>
+      </SubHeader>
 
       <br />
 
-      <div className="mt-2.5">
-        <span id="add_positive_reaction">
-          <ul className="positive reactions-box">
-            <li className="reaction reaction-like" data-reaction="Like">
-            </li>
-            <li className="reaction reaction-love" data-reaction="Love">
-            </li>
-            <li className="reaction reaction-haha" data-reaction="HaHa">
-            </li>
-            <li className="reaction reaction-wow" data-reaction="Wow">
-            </li>
-            <li className="reaction reaction-sad" data-reaction="Sad">
-            </li>
-            <li className="reaction reaction-angry" data-reaction="Angry">
-            </li>
-          </ul>
-
-          <button className="btn btn-primary w-full">
-            Require reaction
-          </button>
-        </span>
-      </div>
+      <ClepherReactionBox
+        reactionType="positive"
+        reactions={positiveReactions}
+        setReactions={setPositiveReactions}
+      />
 
       <br />
 
@@ -89,12 +75,13 @@ const PostSettings = () => {
 
       <br />
 
-      <h1 className="border-b border-b-base-300 mb-2.5 py-0.5 font-semibold">
+      <SubHeader>
         Private Reply After Post Engagement
-      </h1>
+      </SubHeader>
+
 
       <ClepherSelect
-        label="Select Message Type"
+        label="Select message type"
         options={MESSAGE_TYPES}
         onSelect={setMessageType}
       />

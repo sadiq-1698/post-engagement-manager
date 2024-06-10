@@ -467,3 +467,30 @@ export const POST_ENGAGEMENT_HEADERS: TableHeaders = [
     ),
   },
 ];
+
+export const POSITIVE_REACTIONS: Array<{ key: string, label: string }> = [
+  {
+    key: "reaction-like",
+    label: "Like"
+  },
+  {
+    key: "reaction-love",
+    label: "Love"
+  },
+  {
+    key: "reaction-haha",
+    label: "Haha"
+  },
+  {
+    key: "reaction-wow",
+    label: "Wow"
+  },
+  {
+    key: "reaction-sad",
+    label: "Sad"
+  },
+  {
+    key: "reaction-angry",
+    label: "Angry"
+  }
+];

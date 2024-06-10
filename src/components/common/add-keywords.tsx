@@ -32,6 +32,10 @@ const AddKeywords = ({
     clearField: React.Dispatch<string>
   ) => {
     if (keyword.trim().length < 1) return;
+    if (array.includes(keyword.trim())) {
+      clearField("");
+      return;
+    }
     const res = [...array, keyword];
     arraySetterFunc([...res]);
     clearField("");
@@ -49,7 +53,7 @@ const AddKeywords = ({
 
   return (
     <div className="form-control">
-      <div className="label">
+      <div className="label !pl-0">
         <span className="label-text">
           {header}
         </span>
