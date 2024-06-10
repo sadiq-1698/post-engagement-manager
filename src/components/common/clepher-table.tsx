@@ -6,7 +6,7 @@ export type TableRowDataType = {
   [key: string]: string | number
 }
 
-export type TableProps = {
+export type ClepherTableProps = {
   selectable?: boolean
   headers: TableHeaders,
   selectedRows: number[],
@@ -28,7 +28,7 @@ const ClepherTable = ({
   handleSelectRow,
   selectable = true,
   sortOrder = 'reset',
-}: TableProps) => {
+}: ClepherTableProps) => {
   return (
     <div className="overflow-y-hidden overflow-x-scroll">
       <table className="table table-sm bg-base-100 px-6" style={{ position: 'initial' }}>

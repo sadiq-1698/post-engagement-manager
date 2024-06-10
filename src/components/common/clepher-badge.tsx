@@ -1,4 +1,9 @@
-const ClepherBadge = ({ label, onClose }: { label: string, onClose: () => void }) => {
+export type ClepherBadgeProps = {
+  label: string | React.ReactNode,
+  onClose: () => void
+}
+
+const ClepherBadge = ({ label, onClose }: ClepherBadgeProps) => {
   return (
     <div className="badge-clepher">
       {label}

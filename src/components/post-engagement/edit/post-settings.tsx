@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import AddKeywords from "components/common/add-keywords";
 import ClepherSelect from "components/common/clepher-select";
 import { MESSAGE_FLOWS, MESSAGE_TYPES, TEXT_CARDS } from "enums";
+import ClepherReactionBox from "components/common/clepher-reaction-box";
 
 const PostSettings = () => {
   const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);
   const [triggerKeywords, setTriggerKeywords] = useState<Array<string>>([]);
+  const [positiveReactions, setPositiveReactions] = useState<Array<string>>([]);
 
   const [excludeKeywordVal, setExcludeKeywordVal] = useState("");
   const [triggerKeywordVal, setTriggerKeywordVal] = useState("");
@@ -45,26 +47,11 @@ const PostSettings = () => {
       <br />
 
       <div className="mt-2.5">
-        <span id="add_positive_reaction">
-          <ul className="positive reactions-box">
-            <li className="reaction reaction-like" data-reaction="Like">
-            </li>
-            <li className="reaction reaction-love" data-reaction="Love">
-            </li>
-            <li className="reaction reaction-haha" data-reaction="HaHa">
-            </li>
-            <li className="reaction reaction-wow" data-reaction="Wow">
-            </li>
-            <li className="reaction reaction-sad" data-reaction="Sad">
-            </li>
-            <li className="reaction reaction-angry" data-reaction="Angry">
-            </li>
-          </ul>
-
-          <button className="btn btn-primary w-full">
-            Require reaction
-          </button>
-        </span>
+        <ClepherReactionBox
+          reactionType="positive"
+          reactions={positiveReactions}
+          setReactions={setPositiveReactions}
+        />
       </div>
 
       <br />
