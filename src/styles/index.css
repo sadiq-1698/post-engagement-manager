@@ -1,0 +1,13 @@
+.sidebar-icon-parent svg,
+.header-action-btn svg,
+.capture-tools svg {
+    color: #0e1a44;
+}
+
+.badge-clepher {
+    @apply rounded-full justify-center px-2.5 py-[0.875rem] border-[#c7e4ff] bg-[#deefff];
+    @apply h-5 m-0.5 border text-sm leading-5 inline-flex items-center;
+}
+
+@import url('reaction.css');
+

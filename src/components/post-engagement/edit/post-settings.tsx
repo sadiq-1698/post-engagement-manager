@@ -7,7 +7,7 @@ import ClepherReactionBox from "components/common/clepher-reaction-box";
 const PostSettings = () => {
   const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);
   const [triggerKeywords, setTriggerKeywords] = useState<Array<string>>([]);
-  const [positiveReactions, setPositiveReactions] = useState<Array<string>>([]);
+  const [positiveReactions, setPositiveReactions] = useState<Array<{ key: string, label: string }>>([]);
 
   const [excludeKeywordVal, setExcludeKeywordVal] = useState("");
   const [triggerKeywordVal, setTriggerKeywordVal] = useState("");
@@ -40,19 +40,17 @@ const PostSettings = () => {
 
       <br />
 
-      <h1 className="border-b border-b-base-300">
+      <h1 className="border-b border-b-base-300 pb-1 font-semibold">
         Require a Post Reaction
       </h1>
 
       <br />
 
-      <div className="mt-2.5">
-        <ClepherReactionBox
-          reactionType="positive"
-          reactions={positiveReactions}
-          setReactions={setPositiveReactions}
-        />
-      </div>
+      <ClepherReactionBox
+        reactionType="positive"
+        reactions={positiveReactions}
+        setReactions={setPositiveReactions}
+      />
 
       <br />
 
@@ -76,12 +74,12 @@ const PostSettings = () => {
 
       <br />
 
-      <h1 className="border-b border-b-base-300 mb-2.5 py-0.5 font-semibold">
+      <h1 className="border-b border-b-base-300 pb-1 font-semibold">
         Private Reply After Post Engagement
       </h1>
 
       <ClepherSelect
-        label="Select Message Type"
+        label="Select message type"
         options={MESSAGE_TYPES}
         onSelect={setMessageType}
       />

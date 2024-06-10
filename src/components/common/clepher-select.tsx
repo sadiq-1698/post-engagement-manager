@@ -14,7 +14,7 @@ type ClepherSelectProps = {
 const ClepherSelect = ({ label, options, includeSelect = false, onSelect }: ClepherSelectProps) => {
   return (
     <div className="form-control">
-      <div className="label">
+      <div className="label !px-0">
         <span className="label-text">
           {label}
         </span>

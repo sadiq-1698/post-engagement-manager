@@ -1,37 +1,19 @@
+import ClepherBadge from "components/common/clepher-badge";
 import getReactionSet from "utils/methods/get-reaction-set";
 
-export type ClepherReactions = {
+export type ClepherReactionBoxProps = {
   reactionType: string;
-  reactions: Array<string>;
-  setReactions: React.Dispatch<Array<string>>
+  reactions: Array<{ key: string, label: string }>;
+  setReactions: React.Dispatch<Array<{ key: string, label: string }>>
 }
 
-export type ReactionBadgeProps = {
-  label: string | React.ReactNode,
-  reaction: string,
-  onClose: () => void
-}
-
-const ReactionBadge = ({ label, reaction, onClose }: ReactionBadgeProps) => {
-  return (
-    <div className="badge-clepher">
-      <span className={`${reaction} inline pr-5 mr-1`}></span>
-      {label}
-      <span
-        onClick={onClose}
-        className="ml-1 cursor-pointer text-xs hover:text-error">
-        ✕
-      </span>
-    </div>
-  );
-}
-
-const ClepherReactionBox = ({ reactionType, reactions, setReactions }: ClepherReactions) => {
-  const handleSelection = (reaction: string) => {
+const ClepherReactionBox = ({ reactionType, reactions, setReactions }: ClepherReactionBoxProps) => {
+  const handleSelection = (reaction: { key: string, label: string }) => {
+    if (reactions.map(el => el.key).includes(reaction.key)) return; // prevent adding duplicate reaction
     setReactions([...reactions, reaction]);
   }
 
-  const handleCloseBadge = (idx: number, setReactions: React.Dispatch<Array<string>>) => {
+  const handleCloseBadge = (idx: number, setReactions: React.Dispatch<Array<{ key: string, label: string }>>) => {
     const res = reactions.filter((el, index) => index !== idx);
     setReactions([...res]);
   }
@@ -41,9 +23,9 @@ const ClepherReactionBox = ({ reactionType, reactions, setReactions }: ClepherRe
       <div className="mb-2.5">
         {reactions.map((reaction, idx) => {
           return (
-            <ReactionBadge
-              label={reaction}
+            <ClepherBadge
               reaction={reaction}
+              label={reaction.label}
               key={reaction + "|" + idx}
               onClose={() => handleCloseBadge(idx, setReactions)}
             />
@@ -52,14 +34,14 @@ const ClepherReactionBox = ({ reactionType, reactions, setReactions }: ClepherRe
       </div>
 
 
-      <span id={`add_${reactionType}_reaction`}>
+      <span id={`add_${reactionType}_reaction`} className="block">
         <ul className={`${reactionType} reactions-box`}>
           {
             getReactionSet(reactionType).map((reaction, idx) => {
               return (
                 <li
-                  key={reaction + '|-|-|' + idx}
-                  className={`reaction ${reaction}`}
+                  key={reaction.key}
+                  className={`reaction ${reaction.key}`}
                   onClick={() => handleSelection(reaction)}
                 />
               );
