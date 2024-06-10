@@ -56,7 +56,7 @@ const AddComments = ({ comments, setComments }: AddCommentsProp) => {
       <br />
 
       {
-        comments.length < 10 &&
+        comments.length < STATIC_COMMENTS_HARD_LIMIT &&
         <button className="btn btn-primary" onClick={() => handleAddComment()}>
           Add Comment
         </button>
