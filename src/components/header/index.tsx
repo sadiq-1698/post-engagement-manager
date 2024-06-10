@@ -7,7 +7,7 @@ import ProfileDropdown from "components/header/profile-dropdown";
 
 const Header = () => {
   return (
-    <div className="navbar fixed z-20 border-b border-b-base-300 bg-base-100 flex items-center justify-between">
+    <div className="navbar fixed z-20 border-b border-b-base-300 bg-base-100 flex items-center justify-between max-w-[100vw]">
       <div className="header-left flex items-center">
         <AppLogo />
         <HeaderClientLink />
