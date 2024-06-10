@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { SelectOptionType } from "types/global";
 import AddComments from "components/common/add-comments";
+import ClepherSelect from "components/common/clepher-select";
 import SubHeader from "components/post-engagement/edit/sub-header";
 import { ASSISTANCE_TYPES, COMMENT_TYPES, INTEGRATION_TYPES } from "enums";
-import ClepherSelect, { SelectOptionType } from "components/common/clepher-select";
 
 const AutoResponse = () => {
   const [commentType, setCommentType] = useState<SelectOptionType>(COMMENT_TYPES[0]);

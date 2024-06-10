@@ -1,10 +1,6 @@
 import SortArrow from "components/common/sort-arrow";
-import { TableHeaders, TableSortOrder } from "components/post-engagement";
-
-export type TableRowDataType = {
-  id: string,
-  [key: string]: string | number
-}
+import { TableHeaders } from "components/post-engagement";
+import { TableRowDataType, TableSortOrder } from "types/global";
 
 export type ClepherTableProps = {
   selectable?: boolean

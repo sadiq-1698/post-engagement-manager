@@ -1,4 +1,4 @@
-import { TableSortOrder } from "components/post-engagement";
+import { TableSortOrder } from "types/global";
 
 export type SortArrowProps = { sortOrder: TableSortOrder, className?: string }
 

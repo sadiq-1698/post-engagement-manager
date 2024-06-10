@@ -1,6 +1,7 @@
+import { ReactionsType } from "types/global";
 import { POSITIVE_REACTIONS } from "enums/index";
 
-const getReactionSet = (key: string): Array<{ key: string; label: string }> => {
+const getReactionSet = (key: string): ReactionsType => {
   switch (key) {
     case "positive":
       return POSITIVE_REACTIONS;

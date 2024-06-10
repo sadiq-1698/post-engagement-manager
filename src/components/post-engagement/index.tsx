@@ -1,10 +1,9 @@
+import { TableSortOrder } from "types/global";
 import Pagination from "components/common/pagination";
 import React, { useEffect, useRef, useState } from "react";
 import ClepherTable from "components/common/clepher-table";
 import { MOCK_TABLE_DATA, POST_ENGAGEMENT_HEADERS } from "enums";
 import TableActions from "components/post-engagement/table-actions";
-
-export type TableSortOrder = 'asc' | 'desc' | 'reset'
 
 export type TableHeaders = Array<{
   key: string,

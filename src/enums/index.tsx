@@ -27,6 +27,7 @@ import { ReactComponent as KnowledgeBaseIcon } from "assets/svgs/knowledge-base.
 import InstagramIcon from "assets/svgs/instagram.svg";
 import MessengerBlurpleIcon from "assets/svgs/message-blurple.svg";
 
+import { ReactionsType } from "types/global";
 import { TableHeaders } from "components/post-engagement";
 import TableRowAction from "components/post-engagement/table-row-action";
 
@@ -468,7 +469,7 @@ export const POST_ENGAGEMENT_HEADERS: TableHeaders = [
   },
 ];
 
-export const POSITIVE_REACTIONS: Array<{ key: string, label: string }> = [
+export const POSITIVE_REACTIONS: ReactionsType = [
   {
     key: "reaction-like",
     label: "Like"

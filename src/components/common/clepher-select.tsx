@@ -1,8 +1,4 @@
-export type SelectOptionType = {
-  value: string,
-  label: string,
-  [key: string]: string
-}
+import { SelectOptionType } from "types/global";
 
 type ClepherSelectProps = {
   label: string,
