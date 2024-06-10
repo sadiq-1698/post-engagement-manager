@@ -32,9 +32,13 @@ const AddKeywords = ({
     clearField: React.Dispatch<string>
   ) => {
     if (keyword.trim().length < 1) return;
+    if (array.includes(keyword.trim())) {
+      clearField("");
+      return;
+    }
     const res = [...array, keyword];
     arraySetterFunc([...res]);
-    clearField("");
+
   }
 
   const handleKeyPress = (
