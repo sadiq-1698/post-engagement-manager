@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AddKeywords from "components/common/add-keywords";
 import ClepherSelect from "components/common/clepher-select";
 import { MESSAGE_FLOWS, MESSAGE_TYPES, TEXT_CARDS } from "enums";
+import SubHeader from "components/post-engagement/edit/sub-header";
 import ClepherReactionBox from "components/common/clepher-reaction-box";
 
 const PostSettings = () => {
@@ -40,9 +41,9 @@ const PostSettings = () => {
 
       <br />
 
-      <h1 className="border-b border-b-base-300 pb-1 font-semibold">
+      <SubHeader>
         Require a Post Reaction
-      </h1>
+      </SubHeader>
 
       <br />
 
@@ -74,9 +75,10 @@ const PostSettings = () => {
 
       <br />
 
-      <h1 className="border-b border-b-base-300 pb-1 font-semibold">
+      <SubHeader>
         Private Reply After Post Engagement
-      </h1>
+      </SubHeader>
+
 
       <ClepherSelect
         label="Select message type"
