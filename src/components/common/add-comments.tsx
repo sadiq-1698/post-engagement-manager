@@ -32,7 +32,10 @@ const AddComments = ({ comments, setComments }: AddCommentsProp) => {
           const marginClass = isLastChild ? '' : 'mb-1.5';
 
           return (
-            <div className={`bg-base-200 p-1.5 ${marginClass} rounded-md border border-dotted border-base-300`}>
+            <div
+              key={el + "-|-" + idx}
+              className={`bg-base-200 p-1.5 ${marginClass} rounded-md border border-dotted border-base-300`}
+            >
               <div className="flex flex-row items-center gap-1.5">
                 <input
                   value={el}

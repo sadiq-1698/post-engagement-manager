@@ -1,11 +1,13 @@
 import { TableHeaders } from "types/global";
-import { INSTAGRAM, MESSENGER } from "enums";
 import { ReactionsType } from "types/global";
 import { NavigateFunction } from "react-router-dom";
 import TableRowAction from "components/common/table-row-action";
 
 import InstagramIcon from "assets/svgs/instagram.svg";
 import MessengerBlurpleIcon from "assets/svgs/message-blurple.svg";
+
+const INSTAGRAM = "instagram";
+const MESSENGER = "messenger";
 
 const POST_ENGAGEMENT_BREADCRUMBS = [
   {
@@ -368,6 +370,8 @@ const POSITIVE_REACTIONS: ReactionsType = [
 ];
 
 export {
+  INSTAGRAM,
+  MESSENGER,
   TEXT_CARDS,
   MESSAGE_TYPES,
   COMMENT_TYPES,

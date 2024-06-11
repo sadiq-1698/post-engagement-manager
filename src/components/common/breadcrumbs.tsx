@@ -15,14 +15,14 @@ const Breadcrumbs = ({ breadCrumbs }: { breadCrumbs: BreadcrumbsType }) => {
     >
       <ul>
         {
-          breadCrumbs.map(el => {
+          breadCrumbs.map((el, idx) => {
 
             if (!el.url) {
-              return <li role="link">{el.label}</li>
+              return <li key={el.url + "-|-" + idx} role="link">{el.label}</li>
             }
 
             return (
-              <li role="link">
+              <li role="link" key={el.url + "-|-" + idx}>
                 <Link to={el.url}>{el.label}</Link>
               </li>
             );

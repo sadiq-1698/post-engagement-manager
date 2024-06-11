@@ -8,6 +8,8 @@ type ClepherSelectProps = {
 }
 
 const ClepherSelect = ({ label, options, includeSelect = false, onSelect }: ClepherSelectProps) => {
+  const defaultValue = includeSelect ? "" : options[0]?.value;
+
   return (
     <div className="form-control">
       <div className="label !px-0">
@@ -19,20 +21,20 @@ const ClepherSelect = ({ label, options, includeSelect = false, onSelect }: Clep
         <select
           spellCheck={true}
           autoComplete="on"
+          defaultValue={defaultValue}
           className="select select-bordered w-full"
           onChange={(e) => onSelect(options.find(el => el.value === e.target.value))}
         >
           {
             includeSelect &&
-            <option value="" disabled={true} selected={true}>
+            <option value="" disabled={true}>
               Select
             </option>
           }
           {
             options.map((el, idx) => {
-              const defaultSelected = idx === 0 && !includeSelect;
               return (
-                <option value={el.value} selected={defaultSelected}>
+                <option key={el.label + "-|-" + idx} value={el.value}>
                   {el.label}
                 </option>
               );
