@@ -122,8 +122,6 @@ function PostEngagementEditProvider({ children }: { children: React.ReactNode })
     setTriggerKeywordVal,
   }
 
-  console.log(messageType)
-
   return (
     <PostEngagementEditContext.Provider value={contextValues}>
       <PostEngagementEditDispatchContext.Provider value={contextSetterValues}>
