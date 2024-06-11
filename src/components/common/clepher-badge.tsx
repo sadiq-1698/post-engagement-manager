@@ -6,9 +6,7 @@ export type ClepherBadgeProps = {
 
 /**
  * This component renders a badge with an optional reaction icon and a close button.
- * 
- * @component
- * 
+ *
  * @param {object} props - The properties object.
  * @param {string | React.ReactNode} props.label - The label to be displayed inside the badge.
  * @param {object} [props.reaction] - An optional reaction object containing a key and a label.

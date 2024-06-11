@@ -17,8 +17,6 @@ export type ClepherTableProps = {
 /**
  * This component renders a table with selectable rows, sortable headers, and customizable data.
  * 
- * @component
- * 
  * @param {object} props - The properties object.
  * @param {boolean} [props.selectable=true] - Determines if rows are selectable. Defaults to true.
  * @param {TableHeaders} props.headers - The headers of the table, including their labels, keys, and other properties.

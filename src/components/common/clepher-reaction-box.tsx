@@ -11,8 +11,6 @@ export type ClepherReactionBoxProps = {
  * This component allows users to select and display reactions. It supports adding and removing reactions,
  * ensuring that no duplicate reactions are added.
  * 
- * @component
- * 
  * @param {object} props - The properties object.
  * @param {string} props.reactionType - The type of reactions to be displayed.
  * @param {Array<{ key: string, label: string }>} props.reactions - The list of currently selected reactions.

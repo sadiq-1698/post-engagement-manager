@@ -12,8 +12,6 @@ type AddKeywordsProp = {
  * This component allows users to add keywords to a list and displays them using the ClepherBadge component.
  * It provides functionalities to add, remove, and manage keywords.
  * 
- * @component
- * 
  * @param {object} props - The properties object.
  * @param {string} props.value - The current value of the input field.
  * @param {string} props.header - The header text to be displayed above the input field.

@@ -11,8 +11,6 @@ type ClepherSelectProps = {
  * This component renders a labeled select dropdown with optional initial "Select" option.
  * It supports providing a list of options and a callback function to handle option selection.
  * 
- * @component
- * 
  * @param {object} props - The properties object.
  * @param {string} props.label - The label to be displayed above the select dropdown.
  * @param {boolean} [props.includeSelect=false] - Whether to include an initial "Select" option. Defaults to false.
