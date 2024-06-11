@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 import { ASSISTANCE_TYPES, COMMENT_TYPES, INTEGRATION_TYPES, MESSAGE_FLOWS, MESSAGE_TYPES, TEXT_CARDS } from "enums/post-engagement";
 
 type ContextType = {
-  comments: Array<string>,
+  comments: Array<{ value: string }>,
   textCard: {
     value: string;
     label: string;
@@ -33,7 +33,7 @@ type ContextType = {
 }
 
 type DispatchContextType = {
-  setComments: React.Dispatch<Array<string>>,
+  setComments: React.Dispatch<Array<{ value: string }>>,
   setTextCard: React.Dispatch<{
     value: string;
     label: string;
@@ -85,12 +85,11 @@ function PostEngagementEditProvider({ children }: { children: React.ReactNode })
   const [integrationType, setIntegrationType] = useState<SelectOptionType>(INTEGRATION_TYPES[0]);
   const [assistanceType, setAssistanceType] = useState<SelectOptionType>(ASSISTANCE_TYPES[0]);
 
-  const [comments, setComments] = useState<Array<string>>([
-    "explicabo a laboriosam fugit",
-    "ex provident earum excepturi",
-    "corrupti tempora vero ipsa"
+  const [comments, setComments] = useState([
+    { value: "explicabo a laboriosam fugit" },
+    { value: "ex provident earum excepturi" },
+    { value: "corrupti tempora vero ipsa" }
   ]);
-
 
   const contextValues = {
     comments,

@@ -1,8 +1,8 @@
 import { STATIC_COMMENTS_HARD_LIMIT } from "enums";
 
 type AddCommentsProp = {
-  comments: Array<string>,
-  setComments: React.Dispatch<Array<string>>,
+  comments: Array<{ value: string }>,
+  setComments: React.Dispatch<Array<{ value: string }>>,
 }
 
 /**
@@ -20,14 +20,14 @@ const AddComments = ({ comments, setComments }: AddCommentsProp) => {
   }
 
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>, idx: number) => {
-    const currComments = [...comments];
-    currComments[idx] = e.target.value;
-    setComments([...currComments]);
+    const newComments = [...comments];
+    newComments[idx].value = e.target.value;
+    setComments([...newComments]);
   }
 
   const handleAddComment = () => {
     if (comments.length >= STATIC_COMMENTS_HARD_LIMIT) return;
-    setComments([...comments, ""]);
+    setComments([...comments, { value: '' }]);
   }
 
   return (
@@ -46,8 +46,8 @@ const AddComments = ({ comments, setComments }: AddCommentsProp) => {
             >
               <div className="flex flex-row items-center gap-1.5">
                 <input
-                  value={el}
                   type="text"
+                  value={el.value}
                   placeholder="Type your comment here"
                   onChange={(e) => handleValueChange(e, idx)}
                   className="input w-full focus:outline-offset-0"
