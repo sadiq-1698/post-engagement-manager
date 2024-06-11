@@ -5,14 +5,6 @@ import ClepherTable from "components/common/clepher-table";
 import TableActions from "components/post-engagement/table-actions";
 import { MOCK_TABLE_DATA, POST_ENGAGEMENT_HEADERS, ROWS_PER_PAGE } from "enums";
 
-export type TableHeaders = Array<{
-  key: string,
-  label: string,
-  sortable?: boolean,
-  className?: string,
-  render?: (value: any, index?: number, data?: any) => React.ReactNode
-}>
-
 const PostEngagement = () => {
   const [sortOrder, setSortOrder] = useState<TableSortOrder>('reset');
   const [sortedData, setSortedData] = useState(MOCK_TABLE_DATA);

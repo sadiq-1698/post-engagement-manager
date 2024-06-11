@@ -1,5 +1,5 @@
+import { TableHeaders } from "types/global";
 import SortArrow from "components/common/sort-arrow";
-import { TableHeaders } from "components/post-engagement";
 import { TableRowDataType, TableSortOrder } from "types/global";
 
 export type ClepherTableProps = {

@@ -4,6 +4,14 @@ export type ToolsOption = {
   svg?: JSX.Element;
 }[];
 
+export type TableHeaders = Array<{
+  key: string;
+  label: string;
+  sortable?: boolean;
+  className?: string;
+  render?: (value: any, index?: number, data?: any) => React.ReactNode;
+}>;
+
 export type TableSortOrder = "asc" | "desc" | "reset";
 
 export type TableRowDataType = {
