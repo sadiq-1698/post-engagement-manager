@@ -6,6 +6,15 @@ type BreadcrumbsType = Array<{
   [key: string]: string | undefined
 }>
 
+/**
+ * This component renders a breadcrumb navigation list based on the provided breadcrumbs data.
+ * It supports both clickable links and plain text items.
+ * 
+ * @component
+ * 
+ * @param {object} props - The properties object.
+ * @param {BreadcrumbsType} props.breadCrumbs - An array of breadcrumb items, each containing a label and an optional URL.
+ */
 const Breadcrumbs = ({ breadCrumbs }: { breadCrumbs: BreadcrumbsType }) => {
   return (
     <div

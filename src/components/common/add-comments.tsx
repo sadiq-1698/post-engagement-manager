@@ -5,6 +5,16 @@ type AddCommentsProp = {
   setComments: React.Dispatch<Array<string>>,
 }
 
+/**
+ * This component allows users to add, edit, and delete comments.
+ * It ensures that the number of comments does not exceed the defined limit.
+ * 
+ * @component
+ * 
+ * @param {object} props - The properties object.
+ * @param {Array<string>} props.comments - The list of comments.
+ * @param {React.Dispatch<Array<string>>} props.setComments - The function to update the list of comments.
+ */
 const AddComments = ({ comments, setComments }: AddCommentsProp) => {
   const handleDeleteComment = (idx: number) => {
     const res = comments.filter((el, index) => index !== idx);

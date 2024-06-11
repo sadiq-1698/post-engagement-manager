@@ -14,6 +14,44 @@ export type ClepherTableProps = {
   selectAllRef: React.RefObject<HTMLInputElement>,
 }
 
+/**
+ * This component renders a table with selectable rows, sortable headers, and customizable data.
+ * 
+ * @component
+ * 
+ * @param {object} props - The properties object.
+ * @param {boolean} [props.selectable=true] - Determines if rows are selectable. Defaults to true.
+ * @param {TableHeaders} props.headers - The headers of the table, including their labels, keys, and other properties.
+ * @param {number[]} props.selectedRows - An array of indices of the selected rows.
+ * @param {TableSortOrder} [props.sortOrder='reset'] - The order in which the table is sorted. Defaults to 'reset'.
+ * @param {function} props.handleSelectAll - The function to be called when the "select all" checkbox is clicked.
+ * @param {Array<TableRowDataType>} props.data - The data to be displayed in the table.
+ * @param {function} props.handleSort - The function to be called when a sortable header is clicked.
+ * @param {function} props.handleSelectRow - The function to be called when a row is selected.
+ * @param {React.RefObject<HTMLInputElement>} props.selectAllRef - A reference to the "select all" checkbox.
+ * 
+ * @typedef {object} ClepherTableProps - The type for ClepherTable component properties.
+ * @property {boolean} [selectable=true] - Determines if rows are selectable. Defaults to true.
+ * @property {TableHeaders} headers - The headers of the table, including their labels, keys, and other properties.
+ * @property {number[]} selectedRows - An array of indices of the selected rows.
+ * @property {TableSortOrder} [sortOrder='reset'] - The order in which the table is sorted. Defaults to 'reset'.
+ * @property {function} handleSelectAll - The function to be called when the "select all" checkbox is clicked.
+ * @property {Array<TableRowDataType>} data - The data to be displayed in the table.
+ * @property {function} handleSort - The function to be called when a sortable header is clicked.
+ * @property {function} handleSelectRow - The function to be called when a row is selected.
+ * @property {React.RefObject<HTMLInputElement>} selectAllRef - A reference to the "select all" checkbox.
+ * 
+ * @typedef {object} TableHeaders - The type for table headers.
+ * @property {string} key - The key of the header.
+ * @property {string} label - The label of the header.
+ * @property {boolean} [sortable] - Whether the column is sortable. Defaults to false.
+ * @property {string} [className] - Additional classes for the header cell.
+ * @property {function} [render] - A function to customize the rendering of the cell content.
+ * 
+ * @typedef {object} TableRowDataType - The type for table row data.
+ * 
+ * @typedef {'asc' | 'desc' | 'reset'} TableSortOrder - The type for table sort order.
+ */
 const ClepherTable = ({
   data,
   headers,

@@ -8,6 +8,19 @@ type AddKeywordsProp = {
   setKeywords: React.Dispatch<Array<string>>,
 }
 
+/**
+ * This component allows users to add keywords to a list and displays them using the ClepherBadge component.
+ * It provides functionalities to add, remove, and manage keywords.
+ * 
+ * @component
+ * 
+ * @param {object} props - The properties object.
+ * @param {string} props.value - The current value of the input field.
+ * @param {string} props.header - The header text to be displayed above the input field.
+ * @param {Array<string>} props.keywords - The list of keywords to be displayed.
+ * @param {React.Dispatch<string>} props.setValue - The function to set the input field's value.
+ * @param {React.Dispatch<Array<string>>} props.setKeywords - The function to set the list of keywords.
+ */
 const AddKeywords = ({
   value,
   header,
