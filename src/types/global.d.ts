@@ -18,3 +18,8 @@ export type SelectOptionType = {
 };
 
 export type ReactionsType = Array<{ key: string; label: string }>;
+
+export type TableRowActionType = {
+  label: string;
+  action: (params: any) => void;
+};

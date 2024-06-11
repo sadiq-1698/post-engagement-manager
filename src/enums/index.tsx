@@ -28,8 +28,9 @@ import InstagramIcon from "assets/svgs/instagram.svg";
 import MessengerBlurpleIcon from "assets/svgs/message-blurple.svg";
 
 import { ReactionsType } from "types/global";
+import { NavigateFunction } from 'react-router-dom';
 import { TableHeaders } from "components/post-engagement";
-import TableRowAction from "components/post-engagement/table-row-action";
+import TableRowAction from "components/common/table-row-action";
 
 export const SIDEBAR_MENU = [
   {
@@ -464,9 +465,31 @@ export const POST_ENGAGEMENT_HEADERS: TableHeaders = [
     key: "id",
     label: "Action",
     className: "w-5",
-    render: (value, index, data) => (
-      <TableRowAction data={data} tableRow={index as number} value={value} />
-    ),
+    render: (value, index, data) => {
+      return (
+        <TableRowAction
+          data={data}
+          value={value}
+          tableRow={index as number}
+          /* another approach would be to actually pass in the component (list of actions) */
+          /* if managing params gets difficult */
+          actions={[
+            {
+              label: 'Edit',
+              action: ({ navigate }: { navigate: NavigateFunction }) => navigate(value + '/edit')
+            },
+            {
+              label: 'Rename',
+              action: () => console.log("Row Renamed!")
+            },
+            {
+              label: 'Delete',
+              action: () => console.log("Row Deleted!")
+            }
+          ]}
+        />
+      );
+    },
   },
 ];
 

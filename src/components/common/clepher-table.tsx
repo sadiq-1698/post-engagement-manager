@@ -3,7 +3,7 @@ import { TableHeaders } from "components/post-engagement";
 import { TableRowDataType, TableSortOrder } from "types/global";
 
 export type ClepherTableProps = {
-  selectable?: boolean
+  selectable?: boolean,
   headers: TableHeaders,
   selectedRows: number[],
   sortOrder?: TableSortOrder,

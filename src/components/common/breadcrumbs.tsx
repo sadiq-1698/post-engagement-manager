@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-type BreadcrumbType = Array<{
+type BreadcrumbsType = Array<{
   label: string,
   url?: string,
   [key: string]: string | undefined
 }>
 
-const Breadcrumbs = ({ breadCrumbs }: { breadCrumbs: BreadcrumbType }) => {
+const Breadcrumbs = ({ breadCrumbs }: { breadCrumbs: BreadcrumbsType }) => {
   return (
     <div
       role="navigation"

@@ -37,7 +37,7 @@ const ClepherReactionBox = ({ reactionType, reactions, setReactions }: ClepherRe
       <span id={`add_${reactionType}_reaction`} className="block">
         <ul className={`${reactionType} reactions-box`}>
           {
-            getReactionSet(reactionType).map((reaction, idx) => {
+            getReactionSet(reactionType).map((reaction) => {
               return (
                 <li
                   key={reaction.key}
