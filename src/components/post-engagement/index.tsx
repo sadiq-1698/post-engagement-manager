@@ -2,8 +2,8 @@ import { TableSortOrder } from "types/global";
 import Pagination from "components/common/pagination";
 import React, { useEffect, useRef, useState } from "react";
 import ClepherTable from "components/common/clepher-table";
-import { MOCK_TABLE_DATA, POST_ENGAGEMENT_HEADERS } from "enums";
 import TableActions from "components/post-engagement/table-actions";
+import { MOCK_TABLE_DATA, POST_ENGAGEMENT_HEADERS, ROWS_PER_PAGE } from "enums";
 
 export type TableHeaders = Array<{
   key: string,
@@ -20,7 +20,7 @@ const PostEngagement = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [rowsPerPage] = useState(10);
+  const [rowsPerPage] = useState(ROWS_PER_PAGE);
 
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const selectAllRef = useRef<HTMLInputElement>(null);

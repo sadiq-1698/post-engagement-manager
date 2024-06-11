@@ -358,6 +358,7 @@ export const POST_ENGAGEMENT_BREADCRUMBS = [
 ];
 
 export const STATIC_COMMENTS_HARD_LIMIT: number = 10;
+export const ROWS_PER_PAGE: number = 10;
 
 export const MESSAGE_TYPES = [
   {
