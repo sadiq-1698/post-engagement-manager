@@ -1,23 +1,33 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import AddKeywords from "components/common/add-keywords";
 import ClepherSelect from "components/common/clepher-select";
 import { MESSAGE_FLOWS, MESSAGE_TYPES, TEXT_CARDS } from "enums";
 import SubHeader from "components/post-engagement/edit/sub-header";
 import ClepherReactionBox from "components/common/clepher-reaction-box";
+import { PostEngagementEditContext, PostEngagementEditDispatchContext } from "utils/contexts/PostEngagementEditContext";
 
 const PostSettings = () => {
-  const [excludeKeywords, setExcludeKeywords] = useState<Array<string>>([]);
-  const [triggerKeywords, setTriggerKeywords] = useState<Array<string>>([]);
-  const [positiveReactions, setPositiveReactions] = useState<Array<{ key: string, label: string }>>([]);
+  const {
+    textCard,
+    messageType,
+    messageFlow,
+    excludeKeywords,
+    triggerKeywords,
+    positiveReactions,
+    excludeKeywordVal,
+    triggerKeywordVal,
+  } = useContext(PostEngagementEditContext);
 
-  const [excludeKeywordVal, setExcludeKeywordVal] = useState("");
-  const [triggerKeywordVal, setTriggerKeywordVal] = useState("");
-
-  const [messageType, setMessageType] = useState(MESSAGE_TYPES[0]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [messageFlow, setMessageFlow] = useState(MESSAGE_FLOWS[0]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [textCard, setTextCard] = useState(TEXT_CARDS[0]);
+  const {
+    setTextCard,
+    setMessageType,
+    setMessageFlow,
+    setExcludeKeywords,
+    setTriggerKeywords,
+    setPositiveReactions,
+    setExcludeKeywordVal,
+    setTriggerKeywordVal,
+  } = useContext(PostEngagementEditDispatchContext);
 
   return (
     <>
@@ -81,14 +91,16 @@ const PostSettings = () => {
 
 
       <ClepherSelect
-        label="Select message type"
+        value={messageType}
         options={MESSAGE_TYPES}
         onSelect={setMessageType}
+        label="Select message type"
       />
 
       <ClepherSelect
         includeSelect
         label="Select Flow"
+        value={messageFlow}
         options={MESSAGE_FLOWS}
         onSelect={setMessageFlow}
       />
@@ -96,8 +108,9 @@ const PostSettings = () => {
       {
         messageType.value === "single-message" &&
         <ClepherSelect
-          label="Select Message"
+          value={textCard}
           options={TEXT_CARDS}
+          label="Select Message"
           onSelect={setTextCard}
         />
       }

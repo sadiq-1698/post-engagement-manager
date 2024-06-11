@@ -1,22 +1,24 @@
-import { useState } from "react";
-import { SelectOptionType } from "types/global";
+import { useContext } from "react";
 import AddComments from "components/common/add-comments";
 import ClepherSelect from "components/common/clepher-select";
 import SubHeader from "components/post-engagement/edit/sub-header";
 import { ASSISTANCE_TYPES, COMMENT_TYPES, INTEGRATION_TYPES } from "enums";
+import { PostEngagementEditContext, PostEngagementEditDispatchContext } from "utils/contexts/PostEngagementEditContext";
 
 const AutoResponse = () => {
-  const [commentType, setCommentType] = useState<SelectOptionType>(COMMENT_TYPES[0]);
+  const {
+    comments,
+    commentType,
+    assistanceType,
+    integrationType,
+  } = useContext(PostEngagementEditContext);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [integrationType, setIntegrationType] = useState<SelectOptionType>(INTEGRATION_TYPES[0]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [assistanceType, setAssistanceType] = useState<SelectOptionType>(ASSISTANCE_TYPES[0]);
-  const [comments, setComments] = useState<Array<string>>([
-    "explicabo a laboriosam fugit",
-    "ex provident earum excepturi",
-    "corrupti tempora vero ipsa"
-  ]);
+  const {
+    setComments,
+    setCommentType,
+    setAssistanceType,
+    setIntegrationType,
+  } = useContext(PostEngagementEditDispatchContext);
 
   return (
     <>
@@ -37,6 +39,7 @@ const AutoResponse = () => {
 
       <ClepherSelect
         label="Comment type"
+        value={commentType}
         options={COMMENT_TYPES}
         onSelect={setCommentType}
       />
@@ -46,10 +49,12 @@ const AutoResponse = () => {
         <>
           <ClepherSelect
             label="Select Integration"
+            value={integrationType}
             options={INTEGRATION_TYPES}
             onSelect={setIntegrationType}
           />
           <ClepherSelect
+            value={assistanceType}
             label="Select Assistance"
             options={ASSISTANCE_TYPES}
             onSelect={setAssistanceType}

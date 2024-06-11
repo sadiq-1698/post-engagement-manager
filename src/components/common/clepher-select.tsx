@@ -2,6 +2,7 @@ import { SelectOptionType } from "types/global";
 
 type ClepherSelectProps = {
   label: string,
+  value: SelectOptionType,
   includeSelect?: boolean,
   options: Array<SelectOptionType>,
   onSelect: (option: any) => void
@@ -27,8 +28,7 @@ type ClepherSelectProps = {
  * @property {Array<SelectOptionType>} options - The list of options to be displayed in the dropdown.
  * @property {function} onSelect - The callback function to be called when an option is selected.
  */
-const ClepherSelect = ({ label, options, includeSelect = false, onSelect }: ClepherSelectProps) => {
-  const defaultValue = includeSelect ? "" : options[0]?.value;
+const ClepherSelect = ({ label, options, includeSelect = false, value, onSelect }: ClepherSelectProps) => {
 
   return (
     <div className="form-control">
@@ -41,7 +41,7 @@ const ClepherSelect = ({ label, options, includeSelect = false, onSelect }: Clep
         <select
           spellCheck={true}
           autoComplete="on"
-          defaultValue={defaultValue}
+          value={value.value}
           className="select select-bordered w-full"
           onChange={(e) => onSelect(options.find(el => el.value === e.target.value))}
         >
