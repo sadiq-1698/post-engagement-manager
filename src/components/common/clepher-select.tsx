@@ -1,8 +1,8 @@
 import { SelectOptionType } from "types/global";
 
 type ClepherSelectProps = {
-  value: any,
   label: string,
+  value: SelectOptionType,
   includeSelect?: boolean,
   options: Array<SelectOptionType>,
   onSelect: (option: any) => void
@@ -39,9 +39,9 @@ const ClepherSelect = ({ label, options, includeSelect = false, value, onSelect 
       </div>
       <div className="form-control">
         <select
-          value={value}
           spellCheck={true}
           autoComplete="on"
+          value={value.value}
           className="select select-bordered w-full"
           onChange={(e) => onSelect(options.find(el => el.value === e.target.value))}
         >
