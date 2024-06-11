@@ -6,6 +6,12 @@ type PaginationButtonProps = {
   onClick: () => void
 }
 
+/**
+ * A button component for pagination controls.
+ * 
+ * @param {PaginationButtonProps} props - The props for the PaginationButton component.
+ * @returns {JSX.Element} The rendered pagination button.
+ */
 const PaginationButton = ({ children, disabled = false, onClick }: PaginationButtonProps) => {
   return (
     <button

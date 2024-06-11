@@ -11,6 +11,17 @@ type PaginationProps = {
   onPageChange: (page: number) => void
 }
 
+/**
+ * A pagination control component.
+ * 
+ * @typedef {Object} PaginationProps
+ * @property {number} currentPage - The current page number.
+ * @property {number} totalPages - The total number of pages.
+ * @property {function} onPageChange - Function to be called when the page is changed.
+ * 
+ * @param {PaginationProps} props - The props for the Pagination component.
+ * @returns {JSX.Element} The rendered pagination component.
+ */
 const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) => {
   const [inputValue, setInputValue] = useState(currentPage);
 

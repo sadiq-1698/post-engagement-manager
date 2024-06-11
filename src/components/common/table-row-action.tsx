@@ -8,6 +8,18 @@ type TableRowActionProps = {
   data: Array<TableRowDataType>,
 }
 
+/**
+ * Props for the TableRowAction component.
+ * 
+ * @typedef {Object} TableRowActionProps
+ * @property {any} value - The value associated with the row action.
+ * @property {number} tableRow - The index of the table row.
+ * @property {TableRowActionType[]} actions - The list of actions available for the row.
+ * @property {TableRowDataType[]} data - The table data.
+ * 
+ * @param {TableRowActionProps} props - The props for the TableRowAction component.
+ * @returns {JSX.Element} The rendered table row action component.
+ */
 const TableRowAction = ({ data, tableRow, value, actions }: TableRowActionProps) => {
   const navigate = useNavigate();
   const isFromLastRows = tableRow === data.length - 1 || tableRow === data.length - 2;

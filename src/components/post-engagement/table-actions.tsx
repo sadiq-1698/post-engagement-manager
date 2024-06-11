@@ -7,6 +7,19 @@ type TableActionsProps = {
   bulkActions: { label: string, action: () => void }[]
 }
 
+/**
+ * Props for the TableActions component.
+ * @typedef {Object} TableActionsProps
+ * @property {string} searchQuery - The current search query.
+ * @property {(query: string) => void} onSearchChange - Function to handle search query changes.
+ * @property {{ label: string, action: () => void }[]} bulkActions - Array of bulk actions with labels and corresponding action functions.
+ */
+
+/**
+ * Component for rendering table actions.
+ * @param {TableActionsProps} props - The props for the component.
+ * @returns {JSX.Element} - JSX element representing the table actions.
+ */
 const TableActions = ({ searchQuery, onSearchChange, bulkActions }: TableActionsProps) => {
   return (
     <div className="mb-2 flex flex-row items-end gap-2">

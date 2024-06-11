@@ -3,6 +3,17 @@ import { Link, useLocation } from "react-router-dom";
 
 export type ToolsMenuProps = { title?: string, options: ToolsOption }
 
+/**
+ * This component renders a menu with optional icons and links. 
+ * It highlights the active link based on the current pathname.
+ * 
+ * @typedef {Object} ToolsMenuProps
+ * @property {string} [title] - The title of the tools menu.
+ * @property {ToolsOption} options - The options available in the tools menu.
+ * 
+ * @param {ToolsMenuProps} props - The props for the ToolsMenu component.
+ * @returns {JSX.Element} The rendered tools menu component.
+ */
 const ToolsMenu = ({ title, options }: ToolsMenuProps) => {
   const { pathname } = useLocation();
 
