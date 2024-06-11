@@ -19,10 +19,11 @@ function App() {
           <div className="drawer-content">
             <div className="pt-24">
               <Routes>
-                {/* CAPTURE TOOLS ROUTE DEFINITIONS */}
+                {/* ON DEFAULT BASE URL */}
                 <Route path="/" element={<Navigate to="/capture-tools" />} />
                 <Route path="/capture-tools/" element={<Navigate to="/capture-tools/post-engagement" />} />
 
+                {/* CAPTURE TOOLS ROUTE DEFINITIONS */}
                 <Route path="capture-tools/*" Component={CaptureToolsPage}>
                   <Route path="post-engagement" Component={PostEngagement} />
                   <Route path="post-engagement/:postEngagementId/edit" Component={PostEngagementEdit} />
