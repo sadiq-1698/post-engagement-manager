@@ -28,9 +28,17 @@ const SettingsAndResponse = () => {
       </div>
 
       <div className="h-[76vh] overflow-y-auto px-6 py-3.5 text-sm">
-        <div>
-          {tabIndex === 0 && <PostSettings />}
-          {tabIndex === 1 && <AutoResponse />}
+        <div className="w-full overflow-x-hidden flex">
+          {
+            [PostSettings, AutoResponse].map((tabComponent, idx) => {
+              const away = idx === 0 ? -100 : idx * 100;
+              return (
+                <div className={`min-w-full ${tabIndex === idx ? `translate-x-[-${idx * 100}%] opacity-100` : `opacity-0 translate-x-[${away}%]`} transition-transform duration-[400ms] ease-in-out`}>
+                  {tabComponent()}
+                </div>
+              );
+            })
+          }
         </div>
         <br />
       </div>
