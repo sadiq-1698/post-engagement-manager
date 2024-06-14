@@ -30,18 +30,20 @@ const SettingsAndResponse = () => {
       <div className="h-[76vh] overflow-y-auto px-6 py-3.5 text-sm">
         <div className="w-full overflow-x-hidden flex">
           {
-            [PostSettings, AutoResponse].map((tabComponent, idx) => {
+            [PostSettings, AutoResponse].map((TabContent, idx) => {
               const isActive = tabIndex === idx;
               const enter = `translateX(${-idx * 100}%)`;
               const exit = `translateX(${idx === 0 ? -100 : idx * 100}%)`;
               return (
-                <div className="min-w-full transition-transform duration-[400ms]"
+                <div className="min-w-full duration-[400ms]"
                   style={{
                     opacity: isActive ? 1 : 0,
-                    transform: isActive ? enter : exit
+                    transitionProperty: "transform",
+                    transform: isActive ? enter : exit,
+                    transitionTimingFunction: 'cubic-bezier(0.25, 0.96, 0.25, 1.04)'
                   }}
                 >
-                  {tabComponent()}
+                  <TabContent />
                 </div>
               );
             })
