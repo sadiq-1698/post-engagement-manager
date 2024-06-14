@@ -33,7 +33,8 @@ const SettingsAndResponse = () => {
             [PostSettings, AutoResponse].map((tabComponent, idx) => {
               const away = idx === 0 ? -100 : idx * 100;
               return (
-                <div className={`min-w-full ${tabIndex === idx ? `translate-x-[-${idx * 100}%] opacity-100` : `opacity-0 translate-x-[${away}%]`} transition-transform duration-[400ms] ease-in-out`}>
+                // cubic-bezier(0.95, 0.05, 0.795, 0.035)
+                <div className={`min-w-full ${tabIndex === idx ? `translate-x-[-${idx * 100}%] opacity-100` : `opacity-0 translate-x-[${away}%]`} transition-transform duration-[400ms]`}>
                   {tabComponent()}
                 </div>
               );
