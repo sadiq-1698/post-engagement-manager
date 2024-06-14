@@ -31,10 +31,16 @@ const SettingsAndResponse = () => {
         <div className="w-full overflow-x-hidden flex">
           {
             [PostSettings, AutoResponse].map((tabComponent, idx) => {
-              const away = idx === 0 ? -100 : idx * 100;
+              const isActive = tabIndex === idx;
+              const enter = `translateX(${-idx * 100}%)`;
+              const exit = `translateX(${idx === 0 ? -100 : idx * 100}%)`;
               return (
-                // cubic-bezier(0.95, 0.05, 0.795, 0.035)
-                <div className={`min-w-full ${tabIndex === idx ? `translate-x-[-${idx * 100}%] opacity-100` : `opacity-0 translate-x-[${away}%]`} transition-transform duration-[400ms]`}>
+                <div className="min-w-full transition-transform duration-[400ms]"
+                  style={{
+                    opacity: isActive ? 1 : 0,
+                    transform: isActive ? enter : exit
+                  }}
+                >
                   {tabComponent()}
                 </div>
               );
