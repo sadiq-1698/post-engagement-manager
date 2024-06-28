@@ -8,7 +8,7 @@ const SettingsAndResponse = () => {
 
   const handleTabClick = (index: number) => {
     if (index === tabIndex) return;
-    setDirection(prev => index < tabIndex ? prev + 1 : prev - 1);
+    setDirection(-index);
     setTabIndex(index);
   }
 
@@ -32,12 +32,20 @@ const SettingsAndResponse = () => {
         >
           Auto Response
         </button>
+        <button
+          role="tab"
+          onClick={() => handleTabClick(2)}
+          style={{ borderBottomWidth: '1px' }}
+          className={`tab ${tabIndex === 2 ? 'tab-active' : ''}`}
+        >
+          Auto Response
+        </button>
       </div>
 
       <div className="h-[76vh] overflow-y-auto px-6 py-3.5 text-sm">
         <div className="w-full overflow-x-hidden flex">
           {
-            [PostSettings, AutoResponse].map((tabComponent, idx) => {
+            [PostSettings, AutoResponse, AutoResponse].map((tabComponent, idx) => {
               const isActive = tabIndex === idx;
               const translate = `translateX(${direction * 100}%)`;
               return (
